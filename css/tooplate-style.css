@@ -709,3 +709,40 @@ b, strong {
     max-width: 88%;
   }
 }
+
+.certificate-item {
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.certificate-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: none;
+  background: transparent;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.certificate-item:hover img {
+  transform: scale(1.03);
+}
+
+.certificate-item h6 {
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.certificate-item small {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Optional: dark mode support */
+@media (prefers-color-scheme: dark) {
+  .certificate-item small {
+    color: #ccc;
+  }
+}
