@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
     <!-- MAIN STYLE -->
@@ -39,18 +40,37 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
+                        <a href="#about" class="nav-link">
+                            <i class="uil uil-user-circle"></i>
+                            <span data-hover="About">About Me</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#project" class="nav-link"><span data-hover="Projects">Projects</span></a>
+                        <a href="#skills" class="nav-link">
+                            <i class="uil uil-brain"></i>
+                            <span data-hover="Skills">My Skill</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
+                        <a href="#project" class="nav-link">
+                            <i class="uil uil-scenery"></i>
+                            <span data-hover="Projects">Projects</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
+                        <a href="#resume" class="nav-link">
+                            <i class="uil uil-file-alt"></i>
+                            <span data-hover="Resume">Resume</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">
+                            <i class="uil uil-envelope"></i>
+                            <span data-hover="Contact">Contact</span>
+                        </a>
                     </li>
                 </ul>
+            </div>
 
                 <ul class="navbar-nav ml-lg-auto">
                     <div class="ml-lg-4">
@@ -68,12 +88,17 @@
     <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
         <div class="container">
             <div class="row">
-                
+                <div class="col-lg-5 col-md-12 col-12">
+                <div class="about-image png" data-aos="fade" data-aos-duration="1000">
+                <img src="images/undraw/profil_donny.png" class="img-fluid" alt="png image">
+                </div>
+                </div>
+        
                 <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
                     <div class="about-text">
                         <small class="small-text mobile-align-left">Selamat datang di website portofolio saya!</small>
                         <h1 class="animated animated-text">
-                            <span class="mr-2">Saya adalah</span>
+                            <span class="mr-2">Hello, I'm</span>
                                 <div class="animated-info">
                                     <span class="animated-item">Donny</span>
                                     <span class="animated-item">Andika</span>
@@ -90,15 +115,75 @@
                     </div>
                 </div>
 
-                <div class="col-lg-5 col-md-12 col-12">
-                    <div class="about-image png">
-                        <img src="images/undraw/profil_donny.png" class="img-fluid" alt="png image">
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
+
+<!-- SKILLS -->
+    <section class="skills py-5" id="skills">
+    <div class="container">
+        <!-- Bagian Judul & Deskripsi -->
+        <div class="row justify-content-center text-center mb-4">
+        <div class="col-lg-8">
+            <h2 class="mb-4">My Skill</h2>
+            <p>Saya telah menguasai berbagai tools dan teknologi untuk mendukung pengembangan perangkat lunak dan desain antarmuka.</p>
+        </div>
+        </div>
+
+        <!-- Grid Skill -->
+        <div class="skill-grid mx-auto">
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/html.png" alt="HTML">
+            <p>HTML</p>
+        </div>
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/css.png" alt="CSS">
+            <p>CSS</p>
+        </div>
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/js.png" alt="JavaScript">
+            <p>JavaScript</p>
+        </div>
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/php.png" alt="PHP">
+            <p>PHP</p>
+        </div>
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/mysql.png" alt="MySQL">
+            <p>MySQL</p>
+        </div>
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/figma.png" alt="Figma">
+            <p>Figma</p>
+        </div>
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/vscode.png" alt="VS Code">
+            <p>VS Code</p>
+        </div>
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/netbeans.png" alt="NetBeans">
+            <p>NetBeans</p>
+        </div>
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/flutter.png" alt="Flutter">
+            <p>Flutter</p>
+        </div>
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/dart.png" alt="Dart">
+            <p>Dart</p>
+        </div>
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/Draw.io.png" alt="Draw.io">
+            <p>Draw.io</p>
+        </div>
+        <div class="skill-logo" data-aos="fade-up">
+            <img src="images/skills/php.png" alt="PHP">
+            <p>PHP</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
 
     <!-- PROJECTS -->
     <section class="project py-5" id="project">
@@ -323,6 +408,10 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
 
   </body>
 </html>

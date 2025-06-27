@@ -44,7 +44,7 @@ a:hover {
 }
 
 .navbar-brand .uil {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 p {
@@ -167,6 +167,7 @@ b, strong {
     opacity: 0;
   }
 }
+
 .navbar {
   position: fixed;
   top: 0;
@@ -318,6 +319,31 @@ b, strong {
 .dark-mode .owl-carousel .owl-nav button.owl-prev,
 .dark-mode .owl-carousel button.owl-dot {
   color: #ffffff;
+}
+
+/* Tambahan untuk dark mode - navbar saat mobile collapse */
+.dark-mode .navbar {
+  background-color: #0c0c0d !important;
+}
+
+/* Latar belakang menu collapse */
+.dark-mode .navbar-collapse {
+  background-color: #0c0c0d;
+}
+
+/* Warna tombol hamburger */
+.dark-mode .navbar-toggler {
+  border-color: rgb(255, 255, 255);
+}
+
+/* Hamburger icon (3 garis) berwarna putih di dark mode */
+.dark-mode .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Teks dalam menu tetap putih saat dark mode */
+.dark-mode .nav-link {
+  color: #ffffff !important;
 }
 
 .timeline-wrapper {
@@ -568,5 +594,118 @@ b, strong {
   .social-links li {
     display: inline-block;
     vertical-align: top;
+  }
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+/* Default: mode terang (light mode) */
+.skill-logo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #ffffff; /* putih */
+  border-radius: 12px;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+  border: none;
+}
+
+.skill-logo:hover {
+  box-shadow: 0 0 15px 5px rgba(255, 230, 0, 0.4);
+  transform: translateY(-6px);
+}
+
+.skill-logo img {
+  max-width: 40%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Efek menyembul saat hover */
+.skill-logo:hover img {
+  transform: scale(1.1);
+}
+
+/* Nama tools */
+.skill-logo p {
+  font-size: 13px;
+  margin-top: 6px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* Tablet: 3 kolom */
+@media (max-width: 992px) {
+  .skill-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile: tetap 4 kolom, tapi kecil */
+@media (max-width: 576px) {
+  .skill-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .skill-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .skill-logo img {
+    max-width: 24px;
+  }
+
+  .skill-logo p {
+    font-size: 10px;
+  }
+}
+
+/* Mode gelap berbasis class .dark-mode */
+.dark-mode .skill-logo {
+  background: #1e1e1e;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.dark-mode .skill-logo:hover {
+  box-shadow: 0 0 15px 5px rgba(255, 255, 100, 0.3);
+}
+
+.dark-mode .skill-logo p {
+  color: #f0f0f0;
+}
+
+
+.about-image img {
+  max-width: 80%; /* perkecil dari 100% */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Tambahan: Perkecil lebih jauh di mobile */
+@media (max-width: 768px) {
+  .about-image img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-image img {
+    max-width: 70%;
   }
 }
