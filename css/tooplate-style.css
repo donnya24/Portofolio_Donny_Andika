@@ -746,3 +746,18 @@ b, strong {
     color: #ccc;
   }
 }
+
+.project-info img {
+  max-width: 50%;
+  height: auto;
+  margin: 0 auto 30px auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.project-info img:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 10px rgb(248, 26, 59)); /* Efek glow merah mengikuti bentuk PNG */
+}
