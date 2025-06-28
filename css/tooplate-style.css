@@ -439,43 +439,131 @@ b, strong {
   background: #5b5b5b;
 }
 
-.google-map iframe {
-  width: 100%;
+.google-map {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .contact-form {
-  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  transition: all 0.3s ease-in-out;
+  max-width: 100%;
 }
+
+.contact-form h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #212121;
+}
+
 .contact-form .form-control {
-  background: transparent;
-  border-radius: 2px;
-  outline: none;
-  box-shadow: none;
-  font-weight: bold;
-  margin: 16px 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  border: 1px solid #ddd;
 }
-.contact-form .form-control:not(textarea) {
-  height: 48px;
+
+.contact-form .form-control:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 6px rgba(255, 193, 7, 0.3);
 }
-.contact-form .form-control:hover, .contact-form .form-control:focus {
-  border-color: #ffc200;
+
+.contact-form button {
+  transition: all 0.3s ease;
 }
-.contact-form .submit-btn {
-  background: #ffc200;
-  border-radius: 50px;
+
+.contact-form button:hover {
+  background-color: #343a40;
+  color: #fff;
+  transform: scale(1.02);
+}
+
+/* Dark mode support */
+.dark-mode-bg {
+  background: #1e1e1e;
+}
+.dark-mode-text {
   color: #ffffff;
-  font-weight: bold;
-  border: 0;
-  cursor: pointer;
-  transition: all 0.4s ease;
 }
-.contact-form .submit-btn:hover {
-  background: #474559;
+.dark-mode .form-control {
+  background: #2c2c2c;
+  color: #fff;
+  border-color: #444;
+}
+.dark-mode .form-control::placeholder {
+  color: #aaa;
+}
+
+/* Minimalist form style */
+.minimal-contact-form {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  max-width: 100%;
+}
+
+.minimal-contact-form .form-title {
+  font-size: 18px;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #212121;
+}
+
+.minimal-contact-form .form-control {
+  border-radius: 6px;
+  font-size: 13px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+}
+
+.minimal-contact-form .form-control:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 3px rgba(255, 193, 7, 0.4);
+}
+
+.minimal-contact-form textarea {
+  resize: none;
+}
+
+.minimal-contact-form button {
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.minimal-contact-form button:hover {
+  background-color: #343a40;
+  color: #fff;
+  transform: scale(1.03);
+}
+
+/* Optional dark mode */
+.dark-mode .minimal-contact-form {
+  background: #1e1e1e;
+}
+
+.dark-mode .minimal-contact-form .form-title,
+.dark-mode .minimal-contact-form .form-control {
+  color: #f0f0f0;
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+.dark-mode .minimal-contact-form .form-control::placeholder {
+  color: #aaa;
 }
 
 .contact-info {
   background: #474559;
-  border-radius: 0 0 3px 3px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   position: relative;
   bottom: 8px;
 }
@@ -484,13 +572,24 @@ b, strong {
 }
 
 .social-links .uil {
-  color: #f7f3f3;
   font-size: 20px;
   display: block;
   margin: 5px 0;
+  transition: color 0.3s ease;
+  color: #000000; /* Default: hitam (light mode) */
 }
+
 .social-links .uil:hover {
-  color: #ffc200;
+  color: #f9d14e; /* Hover kuning */
+}
+
+/* Warna putih saat dark mode aktif (pakai class) */
+.dark-mode .social-links .uil {
+  color: #ffffff;
+}
+
+.dark-mode .social-links .uil:hover {
+  color: #f9d14e;
 }
 
 @media (min-width: 1270px) {
