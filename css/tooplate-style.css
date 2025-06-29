@@ -175,6 +175,7 @@ b, strong {
 
 .navbar {
   position: fixed;
+  background-color: #ffffff !important; /* Warna putih solid */
   top: 0;
   right: 0;
   left: 0;
