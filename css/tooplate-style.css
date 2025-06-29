@@ -86,8 +86,20 @@ b, strong {
 }
 
 .custom-btn {
-  cursor: pointer;
+  background: #eee;
+  color: #5b5b5b;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 13px 29px;
+  font-size: 14px;
+  line-height: normal;
+  overflow: hidden;
   transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .custom-btn:hover,
@@ -99,8 +111,6 @@ b, strong {
 .custom-btn.custom-btn-bg {
   background: #474559;
   color: #ffffff;
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .custom-btn.custom-btn-bg:hover,
@@ -110,46 +120,29 @@ b, strong {
   color: #ffffff !important;
 }
 
-/* Untuk tampilan mobile */
+.custom-btn i {
+  margin-right: 8px;
+}
+
+/* Tombol group - responsive */
+.custom-btn-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 768px) {
   .custom-btn-group {
-    display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 12px;
-    width: 100%;
   }
 
   .custom-btn,
   .custom-btn.custom-btn-bg {
     width: 100%;
-    margin: 0;
-    padding: 12px 24px;
-    border-radius: 50px;
-    text-align: center;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .custom-btn i {
-    margin-right: 8px;
   }
 }
-
-/* Untuk tampilan desktop */
-@media (min-width: 769px) {
-  .custom-btn-group {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-  }
-
-  .custom-btn,
-  .custom-btn.custom-btn-bg {
-    min-width: 180px;
-  }
-}
-
 
 .animated {
   position: relative;
