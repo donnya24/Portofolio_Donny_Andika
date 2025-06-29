@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="css/tooplate-style.css">
@@ -396,7 +396,7 @@
                         <div class="item">
                           <div class="project-info">
                             <img src="images/project/project-image01.png" class="img-fluid" alt="project image">
-                            <a href="https://example.com" class="live-demo-link" target="_blank">
+                            <a href="https://www.figma.com/proto/LxdMkCtAuQRohi1FyAyDEi/Rekam-Medis-Klinik-APS?node-id=154-530&t=aIksKzzvJpLWSbjs-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=154%3A65" class="live-demo-link" target="_blank">
                                 <i class="uil uil-external-link-alt"></i> Live Demo
                             </a>
                           </div>
@@ -405,34 +405,34 @@
                         <div class="item">
                           <div class="project-info">
                             <img src="images/project/project-image02.png" class="img-fluid" alt="project image">
-                            <a href="https://example.com" class="live-demo-link" target="_blank">
+                            <a href="https://www.figma.com/proto/GXvP6eltFmFZDVsgmwYqV1/Untitled?node-id=1-52&node-type=canvas&t=Ee0vURmAiCdgu7YW-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A52" class="live-demo-link" target="_blank">
                                 <i class="uil uil-external-link-alt"></i> Live Demo
                             </a>
                           </div>
                         </div>
 
                         <div class="item">
-                          <div class="project-info">
+                        <div class="project-info">
                             <img src="images/project/project-image03.png" class="img-fluid" alt="project image">
-                            <a href="https://example.com" class="live-demo-link" target="_blank">
-                                <i class="uil uil-external-link-alt"></i> Live Demo
+                            <a href="#" class="live-demo-link" onclick="showDemoAlert(event)">
+                            <i class="uil uil-external-link-alt"></i> Live Demo
                             </a>
-                          </div>
+                        </div>
                         </div>
 
                         <div class="item">
-                          <div class="project-info">
+                        <div class="project-info">
                             <img src="images/project/project-image04.png" class="img-fluid" alt="project image">
-                            <a href="https://example.com" class="live-demo-link" target="_blank">
-                                <i class="uil uil-external-link-alt"></i> Live Demo
+                            <a href="#" class="live-demo-link" onclick="showDemoAlert(event)">
+                            <i class="uil uil-external-link-alt"></i> Live Demo
                             </a>
-                          </div>
+                        </div>
                         </div>
 
                         <div class="item">
                           <div class="project-info">
                             <img src="images/project/project-image05.png" class="img-fluid" alt="project image">
-                            <a href="https://example.com" class="live-demo-link" target="_blank">
+                            <a href="https://donnya24.github.io/interpolasi_stirling.github.io/" class="live-demo-link" target="_blank">
                                 <i class="uil uil-external-link-alt"></i> Live Demo
                             </a>
                           </div>
@@ -441,7 +441,7 @@
                         <div class="item">
                           <div class="project-info">
                             <img src="images/project/project-image06.png" class="img-fluid" alt="project image">
-                            <a href="https://example.com" class="live-demo-link" target="_blank">
+                            <a href="https://donnya24.github.io/mazegame/" class="live-demo-link" target="_blank">
                                 <i class="uil uil-external-link-alt"></i> Live Demo
                             </a>
                           </div>
@@ -603,6 +603,20 @@
     }
     });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function showDemoAlert(event) {
+  event.preventDefault();
+  Swal.fire({
+    icon: 'info',
+    title: 'Demo Tidak Tersedia',
+    text: 'Halaman demo proyek ini sedang dalam pengembangan atau memang tidak ada',
+    confirmButtonText: 'Mengerti',
+    timer: 3000
+  });
+}
+</script>
 
   </body>
 </html>

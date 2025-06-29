@@ -86,27 +86,70 @@ b, strong {
 }
 
 .custom-btn {
-  background: #eee;
-  color: #5b5b5b;
-  font-weight: bold;
-  border-radius: 50px;
-  padding: 13px 29px;
-  font-size: 14px;
-  line-height: normal;
-  overflow: hidden;
-  transition: all 0.4s ease;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
 }
-.custom-btn:hover {
+
+.custom-btn:hover,
+.custom-btn:focus,
+.custom-btn:active {
   color: #5fb9f9;
 }
+
 .custom-btn.custom-btn-bg {
   background: #474559;
   color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
 }
-.custom-btn.custom-btn-bg:hover {
+
+.custom-btn.custom-btn-bg:hover,
+.custom-btn.custom-btn-bg:focus,
+.custom-btn.custom-btn-bg:active {
   background: #5fb9f9;
   color: #ffffff !important;
 }
+
+/* Untuk tampilan mobile */
+@media (max-width: 768px) {
+  .custom-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .custom-btn,
+  .custom-btn.custom-btn-bg {
+    width: 100%;
+    margin: 0;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .custom-btn i {
+    margin-right: 8px;
+  }
+}
+
+/* Untuk tampilan desktop */
+@media (min-width: 769px) {
+  .custom-btn-group {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .custom-btn,
+  .custom-btn.custom-btn-bg {
+    min-width: 180px;
+  }
+}
+
 
 .animated {
   position: relative;
@@ -426,6 +469,62 @@ b, strong {
   display: inline-block;
   vertical-align: middle;
   margin-left: 15px;
+}
+
+@media (max-width: 576px) {
+    .timeline-wrapper:before {
+    content: "";
+    background: #474559;
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 12.5%; /* Taruh di tengah */
+  }
+
+  .timeline-yr {
+    background: #474559;
+    border-radius: 100%;
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+  }
+
+  /* Untuk container bagian pendidikan & pengalaman project */
+  .timeline-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .timeline-info {
+    margin-left: 4em; /* diperkecil dari 6em */
+    max-width: 100%;
+  }
+
+  .timeline-yr {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .timeline-yr span {
+    font-size: 14px;
+    line-height: 60px;
+  }
+
+  .timeline-info h3 {
+    font-size: 16px;
+  }
+
+  .timeline-info p,
+  .timeline-info small {
+    font-size: 13px;
+  }
+
+  .full-screen {
+    padding: 3rem 0; /* kurangin padding halaman */
+  }
 }
 
 .owl-carousel .owl-nav span {
@@ -988,4 +1087,21 @@ body.dark-mode .contact-subtext {
   .navbar-collapse .navbar-nav {
     margin-left: auto;
   }
+}
+
+.demo-alert {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
