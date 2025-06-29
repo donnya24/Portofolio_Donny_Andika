@@ -108,28 +108,6 @@ b, strong {
   color: #ffffff !important;
 }
 
-/* Tombol grup responsive */
-.custom-btn-group {
-  display: flex;
-  gap: 12px;
-}
-
-@media (max-width: 768px) {
-  .custom-btn-group {
-    flex-direction: row !important; /* Memaksa horizontal di mobile */
-    flex-wrap: wrap;
-  }
-  
-  .custom-btn-group .btn {
-    margin-bottom: 0;
-    margin-right: 10px !important;
-  }
-  
-  .custom-btn-group .custom-btn-link {
-    margin-top: 0 !important;
-  }
-}
-
 .animated {
   position: relative;
 }
