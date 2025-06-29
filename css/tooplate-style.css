@@ -40,7 +40,7 @@ a {
   transition: all 0.4s ease;
 }
 a:hover {
-  color: #ffc200 !important;
+  color: #5fb9f9 !important;
 }
 
 .navbar-brand .uil {
@@ -92,14 +92,14 @@ b, strong {
   transition: all 0.4s ease;
 }
 .custom-btn:hover {
-  color: #ffc200;
+  color: #5fb9f9;
 }
 .custom-btn.custom-btn-bg {
   background: #474559;
   color: #ffffff;
 }
 .custom-btn.custom-btn-bg:hover {
-  background: #ffc200;
+  background: #5fb9f9;
   color: #ffffff !important;
 }
 
@@ -116,7 +116,7 @@ b, strong {
 }
 
 .animated-item {
-  color: #ffc200;
+  color: #5fb9f9;
 }
 
 .animated-item {
@@ -217,7 +217,7 @@ b, strong {
 
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #ffc200;
+  color: #5fb9f9;
   font-weight: bold;
 }
 .navbar-light .navbar-nav .nav-link:focus span,
@@ -299,7 +299,7 @@ b, strong {
   color: rgba(255, 255, 255, 0.8);
 }
 .dark-mode .navbar-light .navbar-nav .nav-link:hover {
-  color: #ffc200;
+  color: #5fb9f9;
 }
 .dark-mode .navbar[class*="headroom--not-top"] {
   background: #0c0c0d;
@@ -343,7 +343,7 @@ b, strong {
 
 /* Teks dalam menu tetap putih saat dark mode */
 .dark-mode .nav-link {
-  color: #ffffff !important;
+  color: #5fb9f9;
 }
 
 .timeline-wrapper {
@@ -386,7 +386,7 @@ b, strong {
   margin-left: 6em;
 }
 .timeline-info small {
-  color: #ffc200;;
+  color: #5fb9f9;;
   font-size: 16px;
   font-weight: bold;
   display: inline-block;
@@ -426,7 +426,7 @@ b, strong {
   font-size: inherit;
 }
 .owl-theme .owl-nav [class*=owl-]:hover {
-  color: #ffc200;
+  color: #5fb9f9;
 }
 .owl-theme .owl-dots .owl-dot {
   outline: none;
@@ -439,261 +439,79 @@ b, strong {
   background: #5b5b5b;
 }
 
-.google-map {
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+.contact-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  padding: 30px 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  transition: all 0.3s ease;
+  height: 100%;
 }
 
-.contact-form {
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
-  padding: 30px;
-  transition: all 0.3s ease-in-out;
-  max-width: 100%;
-}
-
-.contact-form h2 {
-  font-size: 24px;
+.contact-box h5 {
   font-weight: 700;
-  color: #212121;
-}
-
-.contact-form .form-control {
-  border-radius: 10px;
-  padding: 12px 18px;
-  border: 1px solid #ddd;
-}
-
-.contact-form .form-control:focus {
-  border-color: #ffc107;
-  box-shadow: 0 0 6px rgba(255, 193, 7, 0.3);
-}
-
-.contact-form button {
-  transition: all 0.3s ease;
-}
-
-.contact-form button:hover {
-  background-color: #343a40;
+  margin-top: 15px;
   color: #fff;
-  transform: scale(1.02);
 }
 
-/* Dark mode support */
-.dark-mode-bg {
-  background: #1e1e1e;
-}
-.dark-mode-text {
-  color: #ffffff;
-}
-.dark-mode .form-control {
-  background: #2c2c2c;
-  color: #fff;
-  border-color: #444;
-}
-.dark-mode .form-control::placeholder {
-  color: #aaa;
-}
-
-/* Minimalist form style */
-.minimal-contact-form {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 16px 20px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+.contact-box p {
+  margin: 0;
+  color: #ccc;
   font-size: 14px;
-  max-width: 100%;
 }
 
-.minimal-contact-form .form-title {
-  font-size: 18px;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  color: #212121;
-}
-
-.minimal-contact-form .form-control {
-  border-radius: 6px;
-  font-size: 13px;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-}
-
-.minimal-contact-form .form-control:focus {
-  border-color: #ffc107;
-  box-shadow: 0 0 3px rgba(255, 193, 7, 0.4);
-}
-
-.minimal-contact-form textarea {
-  resize: none;
-}
-
-.minimal-contact-form button {
-  font-size: 13px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.minimal-contact-form button:hover {
-  background-color: #343a40;
-  color: #fff;
-  transform: scale(1.03);
-}
-
-/* Optional dark mode */
-.dark-mode .minimal-contact-form {
-  background: #1e1e1e;
-}
-
-.dark-mode .minimal-contact-form .form-title,
-.dark-mode .minimal-contact-form .form-control {
-  color: #f0f0f0;
-  background: #2a2a2a;
-  border-color: #444;
-}
-
-.dark-mode .minimal-contact-form .form-control::placeholder {
-  color: #aaa;
-}
-
-.contact-info {
-  background: #474559;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  position: relative;
-  bottom: 8px;
-}
-.contact-info p, .contact-info a {
-  color: #f7f3f3;
-}
-
-.social-links .uil {
-  font-size: 20px;
+.contact-box i {
+  font-size: 40px;
+  margin-bottom: 10px;
   display: block;
-  margin: 5px 0;
+}
+
+/* Warna ikon */
+.icon-blue {
+  color: #1e90ff;
+}
+.icon-purple {
+  color: #a187ff;
+}
+.icon-green {
+  color: #28d57a;
+}
+
+/* Tambahan untuk glow saat hover */
+.glow-box:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .contact-box {
+    margin-bottom: 15px;
+  }
+}
+
+/* Default warna: hitam (light mode) */
+.social-links .uil {
+  color: #000000;
+  font-size: 22px;
   transition: color 0.3s ease;
-  color: #000000; /* Default: hitam (light mode) */
 }
 
+/* Hover effect opsional */
 .social-links .uil:hover {
-  color: #f9d14e; /* Hover kuning */
+  color: #5fb9f9;; /* kuning saat hover */
 }
 
-/* Warna putih saat dark mode aktif (pakai class) */
+/* Saat dark mode aktif */
 .dark-mode .social-links .uil {
   color: #ffffff;
 }
 
+/* Hover di dark mode */
 .dark-mode .social-links .uil:hover {
-  color: #f9d14e;
-}
-
-@media (min-width: 1270px) {
-  .owl-theme .owl-dots {
-    position: relative;
-    bottom: 50px;
-  }
-}
-@media (max-width: 991px) {
-  .full-screen {
-    padding-bottom: 4rem;
-  }
-
-  .color-mode {
-    display: none;
-  }
-
-  .about-image {
-    margin-top: -7em;
-  }
-
-  .mobile-mt-2,
-  .contact-form {
-    margin-top: 2em;
-  }
-
-  .contact-info {
-    padding: 0 2rem;
-  }
-}
-@media (max-width: 767px) {
-  h1 {
-    font-size: 2.4em;
-  }
-
-  h2 {
-    font-size: 2em;
-  }
-
-  .animated-item {
-    font-size: 28px;
-  }
-
-  .navbar-collapse {
-    background: #ffffff;
-    text-align: center;
-    padding-bottom: 20px;
-  }
-
-  .navbar-expand-sm .navbar-nav .nav-link {
-    padding: 3px 20px;
-  }
-}
-@media (max-width: 580px) {
-	.animated-info {
-		min-width: 200px;
-	}
-  .animated-item {
-    font-size: 30px;
-  }
-
-  .custom-btn-group {
-    text-align: center;
-  }
-
-  .custom-btn {
-    display: block;
-    margin: 10px 0;
-  }
-
-  .owl-theme .owl-nav {
-    display: none;
-  }
-
-  .timeline-info small {
-    display: block;
-    margin: 10px 0 0 0;
-  }
-}
-@media (max-width: 320px) {
-  .animated-text {
-    margin-top: 0;
-  }
-
-  .about-text {
-    text-align: center;
-  }
-
-  .full-screen {
-    padding: 4rem 0;
-  }
-
-  .mobile-block {
-    display: block;
-  }
-
-  .contact-info {
-    flex-direction: column;
-  }
-
-  .social-links li {
-    display: inline-block;
-    vertical-align: top;
-  }
+  color: #5fb9f9;;
 }
 
 .skill-grid {
@@ -723,7 +541,7 @@ b, strong {
 }
 
 .skill-logo:hover {
-  box-shadow: 0 0 15px 5px rgba(255, 230, 0, 0.4);
+  box-shadow: 0 0 15px 5px #5fb9f9;
   transform: translateY(-6px);
 }
 
@@ -781,7 +599,7 @@ b, strong {
 }
 
 .dark-mode .skill-logo:hover {
-  box-shadow: 0 0 15px 5px rgba(255, 255, 100, 0.3);
+  box-shadow: 0 0 15px 5px #5fb9f9;
 }
 
 .dark-mode .skill-logo p {
@@ -827,6 +645,18 @@ b, strong {
 .certificate-item:hover img {
   transform: scale(1.03);
 }
+/* Glow effect for certificate in dark mode */
+.dark-mode .certificate-item:hover {
+  box-shadow: 0 0 15px 5px #5fb9f9;
+  transition: box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.certificate-item:hover {
+  box-shadow: 0 0 10px 4px rgba(95, 185, 249, 0.5);
+  transition: box-shadow 0.3s ease;
+  border-radius: 8px;
+}
 
 .certificate-item h6 {
   font-size: 14px;
@@ -869,4 +699,112 @@ b, strong {
   .project-info img {
     max-width: 95%; /* dari 80% jadi 95% */
   }
+}
+
+.contact-box {
+  background: linear-gradient(145deg, rgba(240, 242, 245, 0.85), rgba(230, 235, 245, 0.85)); /* light transparent gradient */
+  border-radius: 16px;
+  padding: 30px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-box h5 {
+  font-weight: 700;
+  margin-top: 15px;
+  color: #000000; /* Hitam pekat seperti di gambar */
+}
+
+.contact-box p {
+  margin: 0;
+  color: #333333; /* Abu-abu gelap (hampir hitam) */
+  font-size: 14px;
+}
+
+/* Dark mode override */
+body.dark-mode .contact-box h5,
+body.dark-mode .contact-box p {
+  color: #ffffff; /* Tetap putih di dark mode */
+}
+
+.contact-box i {
+  font-size: 40px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ICON COLORS (more vibrant in light mode) */
+.icon-blue {
+  color: #2563eb; /* brighter blue */
+}
+.icon-purple {
+  color: #7c3aed; /* brighter purple */
+}
+.icon-green {
+  color: #16a34a; /* brighter green */
+}
+
+/* Dark mode styling (unchanged) */
+body.dark-mode .contact-box {
+  background: linear-gradient(145deg, rgba(13, 28, 43, 0.75), rgba(18, 29, 58, 0.75));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .contact-box:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Text colors */
+.contact-heading {
+  color: #1a202c; /* very dark gray */
+}
+
+.contact-subtext {
+  color: #4a5568; /* medium gray */
+}
+
+/* Dark mode text overrides */
+body.dark-mode .contact-heading,
+body.dark-mode .contact-subtext {
+  color: #ffffff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-box {
+    margin-bottom: 20px;
+  }
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 28px;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.591);
+  transition: transform 0.2s ease, filter 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  color: white;
+  text-decoration: none;
+  filter: hue-rotate(265deg); /* efek warna menjadi kuning kehijauan */
 }

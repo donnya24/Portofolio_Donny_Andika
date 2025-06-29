@@ -428,54 +428,50 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
-<section class="contact py-5" id="contact">
+<!-- CONTACT -->
+<section class="contact-section py-5" id="contact">
   <div class="container">
-    <div class="row justify-content-center align-items-start">
-      
-      <!-- MAP DAN INFO -->
-      <div class="col-lg-5 col-md-6 col-12 mb-4">
-        <div class="google-map mini-map">
-          <iframe
-             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31638.484084977197!2d111.88349184530308!3d-7.595591575424294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e784a53eb37a0e1%3A0x4027a76e35318b0!2sNganjuk%2C%20Kec.%20Nganjuk%2C%20Kabupaten%20Nganjuk%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1751134622319!5m2!1sid!2sid"
-            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
+    <div class="text-center mb-5">
+        <h2 class="fw-bold contact-heading">Hubungi <span class="gradient-text">Saya</span></h2>
+        <p class="contact-subtext">Siap melayani tanya jawab atau kerjasama</p>
+    </div>
 
-        <div class="contact-info small-contact-info py-3 px-3">
-          <h3 class="mb-3 text-white">Sapa saya disini! 👇</h3>
-          <p class="footer-text mb-1"><i class="uil uil-phone"></i> 0822-6462-8643</p>
-          <p class="footer-text mb-0"><i class="uil uil-envelope"></i> donny.23024@mhs.unesa.ac.id</p>
+    <div class="row justify-content-center g-4">
+      <!-- Telepon -->
+      <div class="col-md-4 col-12">
+        <div class="contact-box text-center">
+          <i class="uil uil-phone icon-blue"></i>
+          <h5>Telepon</h5>
+          <p>+62 822-6462-8643</p>
         </div>
       </div>
 
-        <div class="col-lg-6 col-12">
-        <div class="contact-form minimal-contact-form">
-            <h2 class="form-title text-center">Tertarik Untuk Bekerja Sama? Let's Talk</h2>
-
-            <form action="" method="get">
-            <div class="row justify-content-center">
-                <div class="col-12 mb-2">
-                <input type="text" class="form-control form-control-sm minimal-input" name="name" placeholder="Your Name" id="name" required>
-                </div>
-                <div class="col-12 mb-2">
-                <input type="email" class="form-control form-control-sm minimal-input" name="email" placeholder="Email" id="email" required>
-                </div>
-                <div class="col-12 mb-2">
-                <textarea name="message" rows="4" class="form-control form-control-sm minimal-input" id="message" placeholder="Message" required></textarea>
-                </div>
-                <div class="col-12 text-end mt-2">
-                <button type="submit" class="btn btn-sm btn-warning px-4 rounded-pill">Send</button>
-                </div>
-            </div>
-            </form>
-        </div>
-        </div>
-
+      <!-- Email -->
+      <div class="col-md-4 col-12">
+        <div class="contact-box text-center">
+          <i class="uil uil-envelope icon-purple"></i>
+          <h5>Email</h5>
+          <p>donny.23024@mhs.unesa.ac.id</p>
         </div>
       </div>
-    </section>
+
+      <!-- Alamat -->
+      <div class="col-md-4 col-12">
+        <div class="contact-box text-center">
+          <i class="uil uil-map-marker icon-green"></i>
+          <h5>Alamat</h5>
+          <p>Jl. Bambang Yuono No. 123, Nganjuk</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/628226462864" class="whatsapp-float" target="_blank" aria-label="Chat via WhatsApp">
+  <i class="uil uil-whatsapp"></i>
+</a>
+
 
   <!-- FOOTER -->
 <footer class="footer py-5">
@@ -539,6 +535,28 @@
         notif.innerHTML = "<div style='color: red;'>Harap lengkapi semua kolom!</div>";
         notif.style.display = "block";
         }
+    });
+    </script>
+
+    <script>
+    const waButton = document.querySelector('.whatsapp-float');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function () {
+        let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        // Hitung arah scroll
+        const direction = scrollTop > lastScrollTop ? 1 : -1;
+        lastScrollTop = scrollTop;
+
+        // Efek menggeser vertikal sedikit (±3px)
+        waButton.style.transform = `translateY(${direction * 3}px)`;
+        
+        // Reset ke posisi normal setelah delay
+        clearTimeout(window.scrollResetTimer);
+        window.scrollResetTimer = setTimeout(() => {
+        waButton.style.transform = 'translateY(0)';
+        }, 200);
     });
     </script>
 
