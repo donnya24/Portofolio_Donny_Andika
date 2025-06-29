@@ -872,3 +872,9 @@ body.dark-mode .contact-subtext {
 .whatsapp-float {
   right: 20px;
 }
+
+@media (max-width: 768px) {
+  .owl-carousel .owl-nav {
+    display: none !important;
+  }
+}
