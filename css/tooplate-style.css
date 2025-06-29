@@ -297,6 +297,22 @@ b, strong {
   color: #ffffff;
 }
 
+.color-mode {
+  cursor: pointer;
+}
+
+.color-mode-icon {
+  font-size: 24px;
+}
+
+/* Tambahan opsional agar selalu ke kanan saat mobile */
+@media (max-width: 991.98px) {
+  .color-mode {
+    margin-top: 10px;
+    margin-left: auto;
+  }
+}
+
 .dark-mode {
   background: #0c0c0d;
 }
@@ -876,5 +892,15 @@ body.dark-mode .contact-subtext {
 @media (max-width: 768px) {
   .owl-carousel .owl-nav {
     display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    text-align: right;
+  }
+
+  .navbar-collapse .navbar-nav {
+    margin-left: auto;
   }
 }
