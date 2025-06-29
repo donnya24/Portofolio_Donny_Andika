@@ -904,11 +904,46 @@ body.dark-mode .contact-subtext {
   color: #ffffff;
 }
 
-/* RESPONSIVE */
+/* Perbaikan utama untuk spacing antar card */
+.contact-section .row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.contact-section .col-md-4 {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px; /* Jarak antar baris */
+}
+
+.contact-box {
+  margin-bottom: 0; /* Reset margin bottom card */
+  height: 100%;
+}
+
+/* Spacing khusus untuk mobile */
 @media (max-width: 768px) {
-  .contact-box {
-    margin-bottom: 20px;
+  .contact-section .col-md-4 {
+    margin-bottom: 25px; /* Jarak lebih rapat di mobile */
   }
+  
+  .contact-box {
+    padding: 25px 20px; /* Padding lebih besar di mobile */
+  }
+}
+
+/* Spacing internal card */
+.contact-box i {
+  margin-bottom: 20px; /* Jarak ikon dengan teks */
+}
+
+.contact-box h5 {
+  margin-top: 0;
+  margin-bottom: 10px; /* Jarak judul dengan konten */
+}
+
+.contact-box p {
+  margin-bottom: 5px; /* Jarak teks dengan bagian bawah */
 }
 
 /* WhatsApp Floating Button */
