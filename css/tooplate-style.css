@@ -694,6 +694,61 @@ b, strong {
   filter: drop-shadow(0 0 10px rgb(248, 26, 59)); /* Efek glow merah mengikuti bentuk PNG */
 }
 
+/* Container project-info tetap sama */
+.project-info {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gaya untuk link live demo */
+.live-demo-link {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px; /* Perbesar font */
+  font-weight: 400;
+  font-family: "Maven Pro", sans-serif;
+  color: #8554e0; /* Warna ungu elegan */
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+
+/* Tampilkan saat gambar di-hover */
+.project-info:hover .live-demo-link {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hover effect */
+.live-demo-link:hover {
+  color: #ffc107;
+}
+
+/* Ikon */
+.live-demo-link i {
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+.live-demo-link:hover i {
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* Dark mode */
+body.dark-mode .live-demo-link {
+  color: #c5a6ff;
+}
+
+body.dark-mode .live-demo-link:hover {
+  color: #ffd75f;
+}
+
 /* Responsive: Perbesar gambar di perangkat mobile */
 @media (max-width: 768px) {
   .project-info img {
