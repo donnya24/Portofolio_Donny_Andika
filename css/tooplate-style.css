@@ -108,6 +108,28 @@ b, strong {
   color: #ffffff !important;
 }
 
+/* Tombol grup responsive */
+.custom-btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .custom-btn-group {
+    flex-direction: row !important; /* Memaksa horizontal di mobile */
+    flex-wrap: wrap;
+  }
+  
+  .custom-btn-group .btn {
+    margin-bottom: 0;
+    margin-right: 10px !important;
+  }
+  
+  .custom-btn-group .custom-btn-link {
+    margin-top: 0 !important;
+  }
+}
+
 .animated {
   position: relative;
 }
@@ -660,6 +682,32 @@ b, strong {
   }
 }
 
+/* ABOUT SECTION ADJUSTMENT */
+.about {
+  padding-top: 30px !important; /* Mengurangi padding atas */
+  min-height: calc(100vh - 70px); /* Menyesuaikan tinggi dengan navbar */
+}
+
+.about .container {
+  padding-top: 0;
+}
+
+.about-image {
+  margin-top: -20px; /* Naikkan gambar profil */
+}
+
+/* Untuk mobile */
+@media (max-width: 768px) {
+  .about {
+    padding-top: 20px !important;
+  }
+  
+  .about-image {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
+
 .certificate-item {
   padding: 10px;
   transition: transform 0.3s ease;
@@ -828,6 +876,17 @@ body.dark-mode .contact-box p {
   margin-bottom: 10px;
   display: block;
 }
+
+/* Warna default (light mode) */
+.special-heading {
+  color: #1a202c; /* Abu-abu sangat gelap */
+}
+
+/* Warna khusus saat dark mode */
+body.dark-mode .special-heading {
+  color: #34dd72; /* Hijau terang, bisa diganti sesuai tema */
+}
+
 
 /* ICON COLORS (more vibrant in light mode) */
 .icon-blue {
