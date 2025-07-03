@@ -6,7 +6,6 @@ https://www.tooplate.com/view/2115-marvel
 
 */
 
-
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
 body {
   font-family: "Maven Pro", sans-serif;
@@ -20,7 +19,6 @@ body {
 html, body {
   overflow-x: hidden;
 }
-
 
 .small-text {
   color: #5b5b5b;
@@ -94,17 +92,13 @@ b, strong {
   font-size: 14px;
   line-height: normal;
   overflow: hidden;
-  transition: background 0.3s ease, color 0.3s ease;
-  cursor: pointer;
+  transition: all 0.4s ease;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
 }
 
-.custom-btn:hover,
-.custom-btn:focus,
-.custom-btn:active {
+.custom-btn:hover {
   color: #5fb9f9;
 }
 
@@ -113,9 +107,7 @@ b, strong {
   color: #ffffff;
 }
 
-.custom-btn.custom-btn-bg:hover,
-.custom-btn.custom-btn-bg:focus,
-.custom-btn.custom-btn-bg:active {
+.custom-btn.custom-btn-bg:hover {
   background: #5fb9f9;
   color: #ffffff !important;
 }
@@ -144,6 +136,67 @@ b, strong {
   }
 }
 
+/* Improved Toggle Button */
+.navbar-toggler {
+  border: none;
+  background: none;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  display: block;
+  height: 2px;
+  background-color: #212121;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Different lengths for each line */
+.navbar-toggler-icon:nth-child(1) {
+  width: 24px;
+  margin-left: auto;
+}
+
+.navbar-toggler-icon:nth-child(2) {
+  width: 20px;
+  margin-left: auto;
+}
+
+.navbar-toggler-icon:nth-child(3) {
+  width: 16px;
+  margin-left: auto;
+}
+
+/* Animation when active */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  width: 24px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+  width: 24px;
+}
+
 .animated {
   position: relative;
 }
@@ -163,14 +216,14 @@ b, strong {
 .animated-item {
   font-size: 37px;
   line-height: inherit;
-  display: block; /* Tetap menggunakan block */
+  display: block;
   opacity: 0;
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
-  white-space: nowrap; /* Mencegah teks membungkus */
-  max-width: 100%; /* Atur lebar maksimum */
+  white-space: nowrap;
+  max-width: 100%;
   animation: BottomTotop 9s linear infinite 0s;
 }
 
@@ -211,7 +264,7 @@ b, strong {
 
 .navbar {
   position: fixed;
-  background-color: #ffffff !important; /* Warna putih solid */
+  background-color: #ffffff !important;
   top: 0;
   right: 0;
   left: 0;
@@ -267,70 +320,47 @@ b, strong {
   transform: translateY(-100%);
 }
 
-.navbar-light .navbar-toggler-icon {
-  background: none;
-}
-
-.navbar-toggler {
-  border: 0;
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  line-height: 32px;
-  outline: none;
-  cursor: pointer;
-  margin-right: 10px;
-}
-.navbar-toggler:focus {
-  outline: none;
-}
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:first-child {
-  transform: rotate(45deg);
-  top: 6px;
-}
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(2) {
-  display: none;
-}
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:last-child {
-  transform: rotate(-45deg);
-  bottom: 1px;
-}
-.navbar-toggler .navbar-toggler-icon {
-  background: #212121;
-  display: block;
-  width: 100%;
-  height: 2px;
-  margin: 5px 0;
-  transition: all 0.4s ease;
-  position: relative;
-}
-
 .copyright-text {
   font-size: 16px;
   font-weight: normal;
   display: block;
 }
 
+/* Sembunyikan teks "Swipe Mode" di desktop */
+@media (min-width: 992px) {
+  .color-mode-text {
+    display: none;
+  }
+}
+
 .color-mode {
+  display: inline-flex;
+  align-items: center;
   font-weight: bold;
+  gap: 6px; /* Jarak antara ikon dan teks */
   cursor: pointer;
 }
 
 .color-mode-icon {
-  position: relative;
-  right: 6px;
+  font-size: 12px;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -8px; /* Bisa sesuaikan sedikit naik/turun */
 }
+
 .color-mode-icon:after {
   font-family: 'unicons';
   content: '\ea9f';
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 300;
   font-style: normal;
 }
+
 .color-mode-icon.active:after {
   font-family: 'unicons';
   content: '\eb65';
-  font-size: 30px;
+  font-size: 20px;
   color: #ffffff;
 }
 
@@ -390,6 +420,14 @@ b, strong {
   color: #ffffff;
 }
 
+/* Dark mode styles for toggle */
+.dark-mode .navbar-toggler-icon {
+  background-color: #ffffff;
+}
+
+.dark-mode .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: #ffffff;
+}
 
 /* Tambahan untuk dark mode - navbar saat mobile collapse */
 .dark-mode .navbar {
@@ -399,16 +437,6 @@ b, strong {
 /* Latar belakang menu collapse */
 .dark-mode .navbar-collapse {
   background-color: #0c0c0d;
-}
-
-/* Warna tombol hamburger */
-.dark-mode .navbar-toggler {
-  border-color: rgb(255, 255, 255);
-}
-
-/* Hamburger icon (3 garis) berwarna putih di dark mode */
-.dark-mode .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Teks dalam menu tetap putih saat dark mode */
@@ -459,9 +487,9 @@ b, strong {
   color: #5fb9f9;
   font-size: 16px;
   font-weight: bold;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 15px;
+  display: block;
+  margin-top: 5px;
+  margin-left: 0;
 }
 
 @media (max-width: 576px) {
@@ -471,7 +499,7 @@ b, strong {
     width: 3px;
     height: 100%;
     position: absolute;
-    left: 12.5%; /* Taruh di tengah */
+    left: 12.5%;
   }
 
   .timeline-yr {
@@ -491,7 +519,7 @@ b, strong {
   }
 
   .timeline-info {
-    margin-left: 4em; /* diperkecil dari 6em */
+    margin-left: 4em;
     max-width: 100%;
   }
 
@@ -516,7 +544,7 @@ b, strong {
   }
 
   .full-screen {
-    padding: 3rem 0; /* kurangin padding halaman */
+    padding: 3rem 0;
   }
 }
 
@@ -627,7 +655,7 @@ b, strong {
 
 /* Hover effect opsional */
 .social-links .uil:hover {
-  color: #5fb9f9;; /* kuning saat hover */
+  color: #5fb9f9;
 }
 
 /* Saat dark mode aktif */
@@ -637,7 +665,7 @@ b, strong {
 
 /* Hover di dark mode */
 .dark-mode .social-links .uil:hover {
-  color: #5fb9f9;;
+  color: #5fb9f9;
 }
 
 .skill-grid {
@@ -655,7 +683,7 @@ b, strong {
 .skill-logo {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #ffffff; /* putih */
+  background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 0 0 rgba(0,0,0,0);
   display: flex;
@@ -732,9 +760,8 @@ b, strong {
   color: #f0f0f0;
 }
 
-
 .about-image img {
-  max-width: 80%; /* perkecil dari 100% */
+  max-width: 80%;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -755,8 +782,8 @@ b, strong {
 
 /* ABOUT SECTION ADJUSTMENT */
 .about {
-  padding-top: 30px !important; /* Mengurangi padding atas */
-  min-height: calc(100vh - 70px); /* Menyesuaikan tinggi dengan navbar */
+  padding-top: 30px !important;
+  min-height: calc(100vh - 70px);
 }
 
 .about .container {
@@ -764,7 +791,7 @@ b, strong {
 }
 
 .about-image {
-  margin-top: -20px; /* Naikkan gambar profil */
+  margin-top: -20px;
 }
 
 /* Untuk mobile */
@@ -843,7 +870,7 @@ b, strong {
 
 .project-info img:hover {
   transform: scale(1.03);
-  filter: drop-shadow(0 0 10px rgb(248, 26, 59)); /* Efek glow merah mengikuti bentuk PNG */
+  filter: drop-shadow(0 0 10px rgb(248, 26, 59));
 }
 
 /* Container project-info tetap sama */
@@ -858,10 +885,10 @@ b, strong {
   bottom: -2px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 20px; /* Perbesar font */
+  font-size: 20px;
   font-weight: 400;
   font-family: "Maven Pro", sans-serif;
-  color: #8554e0; /* Warna ungu elegan */
+  color: #8554e0;
   text-decoration: none;
   opacity: 0;
   transition: opacity 0.4s ease, color 0.3s ease;
@@ -904,12 +931,12 @@ body.dark-mode .live-demo-link:hover {
 /* Responsive: Perbesar gambar di perangkat mobile */
 @media (max-width: 768px) {
   .project-info img {
-    max-width: 95%; /* dari 80% jadi 95% */
+    max-width: 95%;
   }
 }
 
 .contact-box {
-  background: linear-gradient(145deg, rgba(240, 242, 245, 0.85), rgba(230, 235, 245, 0.85)); /* light transparent gradient */
+  background: linear-gradient(145deg, rgba(240, 242, 245, 0.85), rgba(230, 235, 245, 0.85));
   border-radius: 16px;
   padding: 30px 20px;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -927,19 +954,19 @@ body.dark-mode .live-demo-link:hover {
 .contact-box h5 {
   font-weight: 700;
   margin-top: 15px;
-  color: #000000; /* Hitam pekat seperti di gambar */
+  color: #000000;
 }
 
 .contact-box p {
   margin: 0;
-  color: #333333; /* Abu-abu gelap (hampir hitam) */
+  color: #333333;
   font-size: 14px;
 }
 
 /* Dark mode override */
 body.dark-mode .contact-box h5,
 body.dark-mode .contact-box p {
-  color: #ffffff; /* Tetap putih di dark mode */
+  color: #ffffff;
 }
 
 .contact-box i {
@@ -950,24 +977,23 @@ body.dark-mode .contact-box p {
 
 /* Warna default (light mode) */
 .special-heading {
-  color: #1a202c; /* Abu-abu sangat gelap */
+  color: #1a202c;
 }
 
 /* Warna khusus saat dark mode */
 body.dark-mode .special-heading {
-  color: #34dd72; /* Hijau terang, bisa diganti sesuai tema */
+  color: #34dd72;
 }
-
 
 /* ICON COLORS (more vibrant in light mode) */
 .icon-blue {
-  color: #2563eb; /* brighter blue */
+  color: #2563eb;
 }
 .icon-purple {
-  color: #7c3aed; /* brighter purple */
+  color: #7c3aed;
 }
 .icon-green {
-  color: #16a34a; /* brighter green */
+  color: #16a34a;
 }
 
 /* Dark mode styling (unchanged) */
@@ -983,11 +1009,11 @@ body.dark-mode .contact-box:hover {
 
 /* Text colors */
 .contact-heading {
-  color: #1a202c; /* very dark gray */
+  color: #1a202c;
 }
 
 .contact-subtext {
-  color: #4a5568; /* medium gray */
+  color: #4a5568;
 }
 
 /* Dark mode text overrides */
@@ -1005,37 +1031,37 @@ body.dark-mode .contact-subtext {
 .contact-section .col-md-4 {
   padding-left: 15px;
   padding-right: 15px;
-  margin-bottom: 30px; /* Jarak antar baris */
+  margin-bottom: 30px;
 }
 
 .contact-box {
-  margin-bottom: 0; /* Reset margin bottom card */
+  margin-bottom: 0;
   height: 100%;
 }
 
 /* Spacing khusus untuk mobile */
 @media (max-width: 768px) {
   .contact-section .col-md-4 {
-    margin-bottom: 25px; /* Jarak lebih rapat di mobile */
+    margin-bottom: 25px;
   }
   
   .contact-box {
-    padding: 25px 20px; /* Padding lebih besar di mobile */
+    padding: 25px 20px;
   }
 }
 
 /* Spacing internal card */
 .contact-box i {
-  margin-bottom: 20px; /* Jarak ikon dengan teks */
+  margin-bottom: 20px;
 }
 
 .contact-box h5 {
   margin-top: 0;
-  margin-bottom: 10px; /* Jarak judul dengan konten */
+  margin-bottom: 10px;
 }
 
 .contact-box p {
-  margin-bottom: 5px; /* Jarak teks dengan bagian bawah */
+  margin-bottom: 5px;
 }
 
 /* WhatsApp Floating Button */
@@ -1046,10 +1072,10 @@ body.dark-mode .contact-subtext {
   background-color: #25D366;
   color: white;
   border-radius: 50%;
-  padding: 15px;
-  font-size: 28px;
+  padding: 10px;            /* Lebih kecil dari sebelumnya (15px) */
+  font-size: 18px;          /* Ukuran ikon lebih kecil */
   z-index: 999;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.591);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);  /* Sesuaikan bayangan */
   transition: transform 0.2s ease, filter 0.2s ease;
   cursor: pointer;
 }
@@ -1059,11 +1085,7 @@ body.dark-mode .contact-subtext {
   transform: scale(1.1);
   color: white;
   text-decoration: none;
-  filter: hue-rotate(265deg); /* efek warna menjadi kuning kehijauan */
-}
-
-.whatsapp-float {
-  right: 20px;
+  filter: hue-rotate(265deg);
 }
 
 @media (max-width: 768px) {
@@ -1097,4 +1119,29 @@ body.dark-mode .contact-subtext {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Responsive adjustments for toggle button */
+@media (max-width: 576px) {
+  .navbar-toggler {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+  }
+  
+  .navbar-toggler-icon {
+    height: 2px;
+  }
+  
+  .navbar-toggler-icon:nth-child(1) {
+    width: 20px;
+  }
+  
+  .navbar-toggler-icon:nth-child(2) {
+    width: 16px;
+  }
+  
+  .navbar-toggler-icon:nth-child(3) {
+    width: 12px;
+  }
 }
