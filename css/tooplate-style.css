@@ -1073,7 +1073,7 @@ body.dark-mode .contact-subtext {
   color: white;
   border-radius: 50%;
   padding: 10px;            /* Lebih kecil dari sebelumnya (15px) */
-  font-size: 18px;          /* Ukuran ikon lebih kecil */
+  font-size: 25px;          /* Ukuran ikon lebih kecil */
   z-index: 999;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);  /* Sesuaikan bayangan */
   transition: transform 0.2s ease, filter 0.2s ease;
