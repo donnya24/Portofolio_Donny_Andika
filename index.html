@@ -524,7 +524,7 @@
 
         <!-- Copyright -->
         <p class="copyright-text text-center mb-0">
-          &copy; 2025 By Donny Andika Kurniawan
+          &copy; 2025 Donny Andika Kurniawan
         </p>
 
       </div>
@@ -544,25 +544,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
     AOS.init();
-    </script>
-    <script>
-    document.querySelector("form").addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        // Simulasi kirim pesan berhasil
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-        const notif = document.getElementById("form-message");
-
-        if (name && email && message) {
-        notif.innerHTML = "<div style='color: green;'>Pesan berhasil dikirim! ✨</div>";
-        notif.style.display = "block";
-        } else {
-        notif.innerHTML = "<div style='color: red;'>Harap lengkapi semua kolom!</div>";
-        notif.style.display = "block";
-        }
-    });
     </script>
 
     <script>
@@ -614,7 +595,7 @@
     Swal.fire({
         icon: 'info',
         title: 'Demo Tidak Tersedia',
-        text: 'Halaman demo proyek ini sedang dalam pengembangan atau memang tidak ada',
+        text: 'Halaman demo pada proyek ini tidak tersedia',
         confirmButtonText: 'Mengerti',
         timer: 3000
     });
