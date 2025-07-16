@@ -1136,7 +1136,7 @@ body.dark-mode .contact-subtext {
   .navbar-toggler-icon:nth-child(1) {
     width: 20px;
   }
-  
+  s
   .navbar-toggler-icon:nth-child(2) {
     width: 16px;
   }
@@ -1144,4 +1144,12 @@ body.dark-mode .contact-subtext {
   .navbar-toggler-icon:nth-child(3) {
     width: 12px;
   }
+}
+
+/* icon location */
+.icon-red {
+  color: #ff4b5c;
+}
+.icon-yellow {
+  color: #ffc200;
 }
