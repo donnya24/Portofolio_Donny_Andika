@@ -1,608 +1,1140 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio Donny Andika Kurniawan - Frontend Developer & UI/UX Designer"
+    />
+    <title>Donny Andika Kurniawan - Portfolio</title>
 
-    <title>Portofolio Donny Andika Kurniawan</title>
+    <!-- Tailwind Config (harus sebelum CDN Tailwind) -->
+    <script>
+      tailwind = {
+        config: {
+          darkMode: "class",
+          theme: {
+            extend: {
+              animation: {
+                float: "float 6s ease-in-out infinite",
+                glow: "glow 2s ease-in-out infinite alternate",
+                "slide-up": "slideUp 0.5s ease-out",
+                "fade-in": "fadeIn 1s ease-out",
+                "text-slide": "textSlide 9s infinite",
+                "pulse-glow": "pulseGlow 2s infinite",
+                "bounce-in": "bounceIn 0.8s ease-out",
+                "scale-in": "scaleIn 0.6s ease-out",
+                "fade-in-up": "fadeInUp 0.8s ease-out",
+                "float-up": "floatUp 3s ease-in-out infinite",
+                "bounce-float": "bounceFloat 4s ease-in-out infinite",
+                dots: "dots 1.5s infinite",
+              },
+              keyframes: {
+                float: {
+                  "0%, 100%": { transform: "translateY(0px)" },
+                  "50%": { transform: "translateY(-20px)" },
+                },
+                glow: {
+                  "0%": { boxShadow: "0 0 5px rgba(59, 130, 246, 0.5)" },
+                  "100%": {
+                    boxShadow:
+                      "0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4)",
+                  },
+                },
+                slideUp: {
+                  "0%": { transform: "translateY(20px)", opacity: 0 },
+                  "100%": { transform: "translateY(0)", opacity: 1 },
+                },
+                fadeIn: {
+                  "0%": { opacity: 0 },
+                  "100%": { opacity: 1 },
+                },
+                textSlide: {
+                  "0%, 33%": { transform: "translateY(0%)" },
+                  "33.33%, 66%": { transform: "translateY(-100%)" },
+                  "66.66%, 100%": { transform: "translateY(-200%)" },
+                },
+                pulseGlow: {
+                  "0%, 100%": {
+                    boxShadow: "0 0 10px rgba(59, 130, 246, 0.5)",
+                  },
+                  "50%": {
+                    boxShadow: "0 0 30px rgba(59, 130, 246, 0.8)",
+                  },
+                },
+                bounceIn: {
+                  "0%": { transform: "scale(0.8)", opacity: 0 },
+                  "50%": { transform: "scale(1.05)" },
+                  "100%": { transform: "scale(1)", opacity: 1 },
+                },
+                scaleIn: {
+                  "0%": { transform: "scale(0.9)", opacity: 0 },
+                  "100%": { transform: "scale(1)", opacity: 1 },
+                },
+                fadeInUp: {
+                  "0%": { transform: "translateY(30px)", opacity: 0 },
+                  "100%": { transform: "translateY(0)", opacity: 1 },
+                },
+                floatUp: {
+                  "0%, 100%": { transform: "translateY(0px)" },
+                  "50%": { transform: "translateY(-10px)" },
+                },
+                bounceFloat: {
+                  "0%, 100%": { transform: "translateY(0px)" },
+                  "50%": { transform: "translateY(-15px)" },
+                },
+                dots: {
+                  "0%, 20%": {
+                    color: "rgba(255, 255, 255, 0)",
+                    textShadow:
+                      "0.25em 0 0 rgba(255, 255, 255, 0), 0.5em 0 0 rgba(255, 255, 255, 0)",
+                  },
+                  "40%": {
+                    color: "white",
+                    textShadow:
+                      "0.25em 0 0 rgba(255, 255, 255, 0), 0.5em 0 0 rgba(255, 255, 255, 0)",
+                  },
+                  "60%": {
+                    textShadow:
+                      "0.25em 0 0 white, 0.5em 0 0 rgba(255, 255, 255, 0)",
+                  },
+                  "80%, 100%": {
+                    textShadow: "0.25em 0 0 white, 0.5em 0 0 white",
+                  },
+                },
+              },
+              backdropBlur: { xs: "2px" },
+            },
+          },
+        },
+      };
+      // kompatibel dengan CDN tailwind lama:
+      window.tailwind = tailwind.config ? tailwind : { config: tailwind.config };
+    </script>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/unicons.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="css/tooplate-style.css">
-    
-<!--
+    <!-- Unicons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
 
--->
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
 
-    <!-- MENU -->
-        <nav class="navbar navbar-expand-sm navbar-light w-100">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i>Donny Andika Kurniawan</a>
+  <body
+    x-data="{ 
+      darkMode: false, 
+      mobileMenu: false,
+      scrolled: false,
+      currentSection: 'about',
+      showAlert: false,
+      alertMessage: '',
+      showScrollTop: false
+    }"
+    :class="darkMode ? 'dark bg-gray-900' : 'bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100'"
+    class="transition-colors duration-500"
+  >
+    <!-- Animated Particles Background -->
+    <div class="particles" x-show="!darkMode" aria-hidden="true">
+      <template x-for="i in 20" :key="i">
+        <div
+          class="particle"
+          :style="`left: ${Math.random() * 100}%; animation-duration: ${Math.random() * 20 + 10}s; animation-delay: ${Math.random() * 5}s;`"
+        ></div>
+      </template>
+    </div>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
-                <span class="navbar-toggler-icon"></span>
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full top-0 z-50 transition-all duration-300 glass"
+      :class="darkMode ? 'glass-dark' : ''"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-lg font-bold"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            <i
+              class="uil uil-user text-2xl bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent"
+              aria-hidden="true"
+            ></i>
+            <span class="hidden sm:inline">Donny Andika Kurniawan</span>
+            <span class="sm:hidden">DAK</span>
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a
+              href="#about"
+              @click="currentSection = 'about'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'about' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-user-circle" aria-hidden="true"></i
+              ><span>About</span>
+            </a>
+            <a
+              href="#skills"
+              @click="currentSection = 'skills'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'skills' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-brain" aria-hidden="true"></i
+              ><span>Skills</span>
+            </a>
+            <a
+              href="#certificates"
+              @click="currentSection = 'certificates'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'certificates' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-award" aria-hidden="true"></i
+              ><span>Certificates</span>
+            </a>
+            <a
+              href="#projects"
+              @click="currentSection = 'projects'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'projects' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-scenery" aria-hidden="true"></i
+              ><span>Projects</span>
+            </a>
+            <a
+              href="#experience"
+              @click="currentSection = 'experience'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'experience' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-file-alt" aria-hidden="true"></i
+              ><span>Experience</span>
+            </a>
+            <a
+              href="#contact"
+              @click="currentSection = 'contact'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'contact' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-envelope" aria-hidden="true"></i
+              ><span>Contact</span>
+            </a>
+          </div>
+
+          <!-- Right Side Controls -->
+          <div class="flex items-center space-x-4">
+            <!-- Dark Mode Toggle -->
+            <button
+              @click="darkMode = !darkMode"
+              class="p-2 rounded-full transition-all duration-300 hover:scale-110"
+              :class="darkMode ? 'bg-gray-700 text-yellow-400' : 'bg-white/50 text-blue-600'"
+              aria-label="Toggle theme"
+            >
+              <i
+                :class="darkMode ? 'uil uil-sun' : 'uil uil-moon'"
+                class="text-xl"
+              ></i>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">
-                            <i class="uil uil-user-circle"></i>
-                            <span data-hover="About Me">About Me</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#skills" class="nav-link">
-                            <i class="uil uil-brain"></i>
-                            <span data-hover="My Skills">My Skill</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#certificate" class="nav-link">
-                            <i class="uil uil-award"></i>
-                            <span data-hover="Certificate">Certificate</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#project" class="nav-link">
-                            <i class="uil uil-scenery"></i>
-                            <span data-hover="Projects">Projects</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#resume" class="nav-link">
-                            <i class="uil uil-file-alt"></i>
-                            <span data-hover="Resume">Resume</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">
-                            <i class="uil uil-envelope"></i>
-                            <span data-hover="Contact">Contact</span>
-                        </a>
-                    </li>
-                    <div class="color-mode ms-auto d-lg-block d-flex align-items-center gap-2">
-                        <i class="color-mode-icon"></i>
-                        <span class="color-mode-text">Swipe Mode</span>
-                    </div>
-                </ul>
-            </div>
-            </div>
+            <!-- Mobile Menu Toggle -->
+            <button
+              @click="mobileMenu = !mobileMenu"
+              class="lg:hidden p-2"
+              aria-label="Toggle menu"
+            >
+              <div class="w-6 h-6 flex flex-col justify-center space-y-1.5">
+                <span
+                  class="navbar-toggler-icon block h-0.5 w-6 bg-current transform transition-all duration-300"
+                  :class="mobileMenu ? 'rotate-45 translate-y-2' : ''"
+                ></span>
+                <span
+                  class="navbar-toggler-icon block h-0.5 w-4 bg-current transition-all duration-300 ml-auto"
+                  :class="mobileMenu ? 'opacity-0' : ''"
+                ></span>
+                <span
+                  class="navbar-toggler-icon block h-0.5 w-5 bg-current transform transition-all duration-300 ml-auto"
+                  :class="mobileMenu ? '-rotate-45 -translate-y-2 w-6' : ''"
+                ></span>
+              </div>
+            </button>
+          </div>
         </div>
+
+        <!-- Mobile Menu -->
+        <div
+          x-show="mobileMenu"
+          x-transition:enter="transition ease-out duration-300"
+          x-transition:enter-start="opacity-0 transform -translate-y-2"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-200"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="lg:hidden py-4 border-t"
+          :class="darkMode ? 'border-gray-700' : 'border-white/30'"
+        >
+          <div class="flex flex-col space-y-4">
+            <a
+              href="#about"
+              @click="mobileMenu = false; currentSection = 'about'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-user-circle"></i><span>About Me</span>
+            </a>
+            <a
+              href="#skills"
+              @click="mobileMenu = false; currentSection = 'skills'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-brain"></i><span>My Skills</span>
+            </a>
+            <a
+              href="#certificates"
+              @click="mobileMenu = false; currentSection = 'certificates'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-award"></i><span>Certificates</span>
+            </a>
+            <a
+              href="#projects"
+              @click="mobileMenu = false; currentSection = 'projects'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-scenery"></i><span>Projects</span>
+            </a>
+            <a
+              href="#experience"
+              @click="mobileMenu = false; currentSection = 'experience'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-file-alt"></i><span>Experience</span>
+            </a>
+            <a
+              href="#contact"
+              @click="mobileMenu = false; currentSection = 'contact'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-envelope"></i><span>Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </nav>
 
-    <!-- ABOUT -->
-    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-12 col-12">
-                <div class="about-image png" data-aos="fade" data-aos-duration="1000">
-                <img src="images/undraw/profil_donny.png" class="img-fluid" alt="png image">
-                </div>
-                </div>
-        
-                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-                    <div class="about-text">
-                        <h1 class="animated animated-text">
-                            <span class="mr-2">Hello, I'm</span>
-                                <div class="animated-info">
-                                    <span class="animated-item">Donny</span>
-                                    <span class="animated-item">Andika</span>
-                                    <span class="animated-item">Kurniawan</span>
-                                </div>
-                        </h1>
-
-                        <p style="text-align: justify;">
-                            Siap menghadirkan solusi antarmuka yang responsif dan inovatif, dengan komitmen untuk terus belajar dan memberikan kontribusi terbaik secara kolaboratif bersama tim.
-                        </p>
-                        
-                        <div class="custom-btn-group mt-4">
-                          <a href="https://drive.google.com/file/d/1gTFdzsiz5UNciP-Nygj9DxacH1j3okFS/view?usp=sharing" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download CV Saya</a>
-                          <a href="mailto:donny.23024@mhs.unesa.ac.id" class="btn custom-btn custom-btn-bg custom-btn-link">Hubungi Saya!</a>
-                        </div>
-                    </div>
-                </div>
-
+    <!-- Hero/About Section -->
+    <section id="about" class="min-h-screen flex items-center pt-20 px-4">
+      <div class="container mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Image -->
+          <div class="order-2 lg:order-1 animate-float" data-aos="fade-right">
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl opacity-30"
+              ></div>
+              <img
+                src="assets/images/undraw/profil_donny.png"
+                alt="Donny Andika Kurniawan"
+                loading="eager"
+                class="relative w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full object-contain bg-white/10 border-4 border-white/20 shadow-2xl"
+              />
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- FITUR -->
-<section class="resume py-5 d-lg-flex justify-content-center align-items-start" id="resume">
-    <div class="container">
-        <div class="row">
-
-            <!-- Pendidikan -->
-            <div class="col-lg-6 col-12">
-                <h2 class="mb-4">Pendidikan</h2>
-                <div class="timeline">
-                    <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                            <span>2023</span>
-                        </div>
-                        <div class="timeline-info">
-                            <h3><span>S1 Pendidikan Teknologi Informasi</span><small>Universitas Negeri Surabaya</small></h3>
-                            <p style="text-align: justify;">Mahasiswa aktif semester 5 jurusan Teknik Informatika Program Studi Pendidikan Teknologi Informasi Universitas Negeri Surabaya angkatan 2023 yang memiliki ketertarikan dalam bidang IT. Memiliki kemampuan dalam hal public speaking, komunikasi, minat dalam pengembangan perangkat lunak, mampu bekerja sama dalam tim, dan mudah beradaptasi dengan hal baru.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                            <span>2020</span>
-                        </div>
-                        <div class="timeline-info">
-                            <h3><span>Program Ilmu Pengetahuan Alam</span><small>SMAN 1 Gondang</small></h3>
-                            <p style="text-align: justify;">Siswa kelulusan 2023 di SMAN 1 Gondang yang aktif, disiplin, dan memiliki semangat belajar tinggi khususnya dalam bidang teknologi.</p>
-                        </div>
-                    </div>
-                </div>
+          <!-- Content -->
+          <div
+            class="order-1 lg:order-2 text-center lg:text-left"
+            data-aos="fade-left"
+          >
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 flex flex-wrap items-center justify-center lg:justify-start leading-tight"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              <span class="self-center">Hello, I'm</span>
+              <span class="sr-only">Donny Andika Kurniawan</span>
+              <div class="inline-block ml-2 self-center">
+                <span
+                  class="name-scrolling text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+                ></span>
+              </div>
+            </h1>
+            <p
+              class="text-lg mb-8 mt-6 leading-relaxed text-justify"
+              :class="darkMode ? 'text-gray-300' : 'text-gray-700'"
+            >
+              Siap menghadirkan solusi antarmuka yang responsif dan inovatif,
+              dengan komitmen untuk terus belajar dan memberikan kontribusi
+              terbaik secara kolaboratif bersama tim.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <a
+                href="https://drive.google.com/file/d/1gTFdzsiz5UNciP-Nygj9DxacH1j3okFS/view?usp=sharing"
+                target="_blank"
+                class="group px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+                :class="darkMode ? 'glass-dark text-white hover:bg-white/10' : 'glass text-gray-800 hover:bg-black/10'"
+              >
+                <i class="uil uil-file-alt" aria-hidden="true"></i
+                ><span>Download CV Saya</span>
+                <i
+                  class="uil uil-arrow-right transform transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                ></i>
+              </a>
+              <a
+                href="mailto:donny.23024@mhs.unesa.ac.id"
+                class="group px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center justify-center space-x-2"
+              >
+                <i class="uil uil-envelope" aria-hidden="true"></i
+                ><span>Hubungi Saya!</span>
+                <i
+                  class="uil uil-arrow-right transform transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </div>
-
-            <!-- Pengalaman-->
-            <div class="col-lg-6 col-12">
-                <h2 class="mb-4 mobile-mt-2">Pengalaman Project Tim</h2>
-                <div class="timeline">
-                    <!-- 2025 -->
-                    <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                            <span>2025</span>
-                        </div>
-                        <div class="timeline-info">
-                            <h3><span>Perancangan Aplikasi Rekam Medis Klinik Berbasis Website</span>
-                                <br>
-                                <small>VsCode, Php Native, MySQL, Figma</small></h3>
-                            <p style="text-align: justify;">Bertindak sebagai analisis kebutuhan pengguna dan Back-end Developer dalam pengembangan sistem rekam medis berbasis web yang efisien untuk klinik kesehatan.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                            <span>2025</span>
-                        </div>
-                        <div class="timeline-info">
-                            <h3><span>Analisis Perancangan Sistem Rekam Medis Klinik Berbasis Website</span>
-                                <br>
-                                <small>Draw.io, Whimsical, MySQL, Dia</small></h3>
-                            <p style="text-align: justify;">Bertindak sebagai analisis kebutuhan pengguna dan membuat diagram (ERD, DFD, UCD, Class Diagram) untuk sistem rekam medis digital yang terintegrasi.</p>
-                        </div>
-                    </div>
-
-                    <!-- 2024 -->
-                    <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                            <span>2024</span>
-                        </div>
-                        <div class="timeline-info">
-                            <h3><span>Perancangan Aplikasi Penjualan Laptop</span>
-                                <br>
-                                <small>Visual Basic, MySQL</small></h3>
-                            <p style="text-align: justify;">Mengembangkan aplikasi desktop untuk manajemen penjualan laptop dengan fitur CRUD, laporan transaksi, dan sistem inventory yang terintegrasi dengan database.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                            <span>2024</span>
-                        </div>
-                        <div class="timeline-info">
-                            <h3><span>Perancangan Aplikasi Mobile Body Mass Index</span>
-                                <br>
-                                <small>VsCode, Flutter, Dart, Figma</small></h3>
-                            <p style="text-align: justify;">Membangun aplikasi mobile untuk menghitung indeks massa tubuh dengan antarmuka yang user-friendly dan fitur penyimpanan riwayat perhitungan.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                            <span>2024</span>
-                        </div>
-                        <div class="timeline-info">
-                            <h3><span>Perancangan dan Implementasi Sistem Basis Data</span>
-                                <br>
-                                <small>Draw.io, Dia, dan Whimsical</small></h3>
-                            <p style="text-align: justify;">Merancang struktur database yang optimal untuk sistem informasi, termasuk normalisasi tabel, pembuatan relasi entitas, dan dokumentasi sistem.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                            <span>2024</span>
-                        </div>
-                        <div class="timeline-info">
-                            <h3><span>Perancangan Aplikasi Manajemen Caffé</span>
-                                <br>
-                                <small>Java Netbeans IDE</small></h3>
-                            <p style="text-align: justify;">Mendesain antarmuka dan alur kerja aplikasi manajemen kafe yang mencakup fitur pemesanan, pembayaran, dan manajemen stok bahan baku.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
-
-<!-- SKILLS -->
-    <section class="skills py-5" id="skills">
-    <div class="container">
-        <!-- Bagian Judul & Deskripsi -->
-        <div class="row justify-content-center text-center mb-4">
-        <div class="col-lg-8">
-            <h2 class="mb-4">My Skill</h2>
-            <p>Saya memiliki pemahaman dasar mengenai berbagai tools dan teknologi yang digunakan dalam pengembangan perangkat lunak dan UI/UX design.</p>
-        </div>
-        </div>
-
-        <!-- Grid Skill -->
-        <div class="skill-grid mx-auto">
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/html.png" alt="HTML">
-            <p>HTML</p>
-        </div>
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/css.png" alt="CSS">
-            <p>CSS</p>
-        </div>
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/js.png" alt="JavaScript">
-            <p>JavaScript</p>
-        </div>
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/php.png" alt="PHP">
-            <p>PHP</p>
-        </div>
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/mysql.png" alt="MySQL">
-            <p>MySQL</p>
-        </div>
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/figma.png" alt="Figma">
-            <p>Figma</p>
-        </div>
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/vscode.png" alt="VS Code">
-            <p>VS Code</p>
-        </div>
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/netbeans.png" alt="NetBeans">
-            <p>NetBeans</p>
-        </div>
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/flutter.png" alt="Flutter">
-            <p>Flutter</p>
-        </div>
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/dart.png" alt="Dart">
-            <p>Dart</p>
-        </div>
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/Draw.io.png" alt="Draw.io">
-            <p>Draw.io</p>
-        </div>
-        <div class="skill-logo" data-aos="fade-up">
-            <img src="images/skills/Bootstrap.png" alt="Bootstrap">
-            <p>Bootstrap</p>
-        </div>
-        </div>
-    </div>
-    </section>
-
-<!-- CERTIFICATE -->
-    <section class="certificate py-5" id="certificate">
-    <div class="container">
-        <div class="row justify-content-center text-center mb-4">
-        <div class="col-lg-8">
-            <h2 class="mb-4">Certificates</h2>
-            <p>Saya telah mengikuti beberapa pelatihan dan mendapatkan sertifikat yang mendukung kemampuan profesional saya.</p>
-        </div>
-        </div>
-
-        <div class="row g-3 certificate-grid">
-        <!-- Sertifikat 1 -->
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="certificate-item text-center">
-            <img src="images/certificates/certif1.png" loading="lazy" alt="Certificate 1">
-            <h6>Sie PDD Expo Campus</h6>
-            <small>SMAN 1 Gondang • 2024</small>
-            </div>
-        </div>
-
-        <!-- Sertifikat 2 -->
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="certificate-item text-center">
-            <img src="images/certificates/certif2.png" loading="lazy" alt="Certificate 2">
-            <h6>Peserta Kuliah Tamu</h6>
-            <small>Universitas Negeri Surabaya • 2023</small>
-            </div>
-        </div>
-
-        <!-- Sertifikat 3 -->
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="certificate-item text-center">
-            <img src="images/certificates/certif3.png" loading="lazy" alt="Certificate 3">
-            <h6>Training Public Speaking</h6>
-            <small>FESt Management x HIMATEKINS • 2023</small>
-            </div>
-        </div>
-
-        <!-- Sertifikat 4 -->
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="certificate-item text-center">
-            <img src="images/certificates/certif4.png" loading="lazy" alt="Certificate 4">
-            <h6>Webinar NAESCO FORMASDA</h6>
-            <small>FORMASDA • 2024</small>
-            </div>
-        </div>
-
-        <!-- Sertifikat 5 -->
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="certificate-item text-center">
-            <img src="images/certificates/certif5.png" loading="lazy" alt="Certificate 5">
-            <h6>Peserta Seminar Nasional</h6>
-            <small>FESt Management x HIMATEKINS • 2024</small>
-            </div>
-        </div>
-
-        <!-- Sertifikat 6 -->
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="certificate-item text-center">
-            <img src="images/certificates/certif6.png" loading="lazy" alt="Certificate 6">
-            <h6>FESt GOWORLD ASIA</h6>
-            <small>FESt Management x HIMATEKINS • 2024</small>
-            </div>
-        </div>
-
-        <!-- Sertifikat 7 -->
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="certificate-item text-center">
-            <img src="images/certificates/certif7.png" loading="lazy" alt="Certificate 7">
-            <h6>Pelatihan Entrepreneurship</h6>
-            <small>FESt Management x HIMATEKINS • 2024</small>
-            </div>
-        </div>
-
-        <!-- Sertifikat 8 -->
-        <div class="col-6 col-md-4 col-lg-3">
-            <div class="certificate-item text-center">
-            <img src="images/certificates/certif8.png" loading="lazy" alt="Certificate 8">
-            <h6>Pengerjaan Soal Anti Narkoba</h6>
-            <small>Universitas Negeri Surabaya • 2023</small>
-            </div>
-        </div>
-    </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="project py-5" id="project">
-        <div class="container">
-                
-                <div class="row">
-                        <div class="container">
-                <div class="row justify-content-center text-center mb-4">
-                <div class="col-lg-8">
-                    <h2 class="mb-4">Project</h2>
-                    <p>Saya dan tim telah mengerjakan berbagai proyek pengembangan perangkat lunak dan desain, mulai dari aplikasi web hingga antarmuka pengguna yang responsif dan interaktif.</p>
-                </div>
-                </div>
-
-                      <div class="owl-carousel owl-theme">
-                        <div class="item">
-                          <div class="project-info">
-                            <img src="images/project/project-image01.png" class="img-fluid" alt="project image">
-                            <a href="https://www.figma.com/proto/LxdMkCtAuQRohi1FyAyDEi/Rekam-Medis-Klinik-APS?node-id=154-530&t=aIksKzzvJpLWSbjs-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=154%3A65" class="live-demo-link" target="_blank">
-                                <i class="uil uil-external-link-alt"></i> Live Demo
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <img src="images/project/project-image02.png" class="img-fluid" alt="project image">
-                            <a href="https://www.figma.com/proto/GXvP6eltFmFZDVsgmwYqV1/Untitled?node-id=1-52&node-type=canvas&t=Ee0vURmAiCdgu7YW-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A52" class="live-demo-link" target="_blank">
-                                <i class="uil uil-external-link-alt"></i> Live Demo
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="item">
-                        <div class="project-info">
-                            <img src="images/project/project-image03.png" class="img-fluid" alt="project image">
-                            <a href="#" class="live-demo-link" onclick="showDemoAlert(event)">
-                            <i class="uil uil-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                        </div>
-
-                        <div class="item">
-                        <div class="project-info">
-                            <img src="images/project/project-image04.png" class="img-fluid" alt="project image">
-                            <a href="#" class="live-demo-link" onclick="showDemoAlert(event)">
-                            <i class="uil uil-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <img src="images/project/project-image05.png" class="img-fluid" alt="project image">
-                            <a href="https://donnya24.github.io/interpolasi_stirling.github.io/" class="live-demo-link" target="_blank">
-                                <i class="uil uil-external-link-alt"></i> Live Demo
-                            </a>
-                          </div>
-                        </div>
-
-                        <div class="item">
-                          <div class="project-info">
-                            <img src="images/project/project-image06.png" class="img-fluid" alt="project image">
-                            <a href="https://donnya24.github.io/mazegame/" class="live-demo-link" target="_blank">
-                                <i class="uil uil-external-link-alt"></i> Live Demo
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-
-                  </div>
-                </div>
-        </div>
-    </section>
-
-<!-- CONTACT -->
-<section class="contact-section py-5" id="contact">
-  <div class="container">
-    <div class="text-center mb-5">
-        <h2 class="fw-bold contact-heading">Hubungi <span class="gradient-text">Saya</span></h2>
-        <p class="contact-subtext">Siap melayani tanya jawab atau kerjasama</p>
-    </div>
-
-    <div class="row justify-content-center g-4">
-      <!-- Telepon -->
-      <div class="col-md-4 col-12">
-        <div class="contact-box text-center">
-          <i class="uil uil-phone icon-green"></i>
-          <h5>Telepon</h5>
-          <p>+62 822-6462-8643</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Email -->
-      <div class="col-md-4 col-12">
-        <div class="contact-box text-center">
-          <i class="uil uil-envelope icon-red"></i>
-          <h5>Email</h5>
-          <p>donny.23024@mhs.unesa.ac.id</p>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 animate-fade-in-up">
+      <div class="container mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-4xl font-bold mb-4"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            My
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+              >Skills</span
+            >
+          </h2>
+          <p :class="darkMode ? 'text-gray-400' : 'text-gray-700'">
+            Saya memiliki pemahaman dasar mengenai berbagai tools dan teknologi
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 max-w-4xl mx-auto"
+          x-data="{ skills: [
+               ['assets/images/skills/html.png','HTML'],
+               ['assets/images/skills/css.png','CSS'],
+               ['assets/images/skills/js.png','JavaScript'],
+               ['assets/images/skills/php.png','PHP'],
+               ['assets/images/skills/mysql.png','MySQL'],
+               ['assets/images/skills/figma.png','Figma'],
+               ['assets/images/skills/vscode.png','VS Code'],
+               ['assets/images/skills/netbeans.png','NetBeans'],
+               ['assets/images/skills/flutter.png','Flutter'],
+               ['assets/images/skills/dart.png','Dart'],
+               ['assets/images/skills/Draw.io.png','Draw.io'],
+               ['assets/images/skills/Bootstrap.png','Bootstrap']
+             ]}"
+        >
+          <template x-for="(skill, index) in skills" :key="skill[1]">
+            <div
+              class="group card-hover"
+              :data-aos="'fade-up'"
+              :data-aos-delay="index * 50"
+            >
+              <div
+                class="p-6 rounded-2xl transition-all duration-300 hover:scale-110 hover:animate-pulse-glow cursor-pointer"
+                :class="darkMode ? 'glass-dark' : 'glass'"
+              >
+                <img
+                  :src="skill[0]"
+                  :alt="skill[1]"
+                  loading="lazy"
+                  class="mx-auto w-12 sm:w-14 md:w-16 aspect-square object-contain"
+                />
+                <p
+                  class="text-xs text-center font-semibold mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-700'"
+                  x-text="skill[1]"
+                ></p>
+              </div>
+            </div>
+          </template>
         </div>
       </div>
+    </section>
 
-      <!-- Alamat -->
-      <div class="col-md-4 col-12">
-        <div class="contact-box text-center">
-          <i class="uil uil-map-marker icon-yellow"></i>
-          <h5>Alamat</h5>
-          <p>Jl. Ke Ngluyu, Gondangkulon, Kec. Gondang, Kabupaten Nganjuk, Jawa Timur 64451</p>
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 px-4 animate-fade-in-up">
+      <div class="container mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-4xl font-bold mb-4"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            My
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+              >Certificates</span
+            >
+          </h2>
+          <p :class="darkMode ? 'text-gray-400' : 'text-gray-700'">
+            Saya telah mengikuti beberapa pelatihan dan mendapatkan sertifikat
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+          x-data="{ certs: [
+               ['assets/images/certificates/certif1.png','Sie PDD Expo Campus','SMAN 1 Gondang • 2024'],
+               ['assets/images/certificates/certif2.png','Peserta Kuliah Tamu','Universitas Negeri Surabaya • 2023'],
+               ['assets/images/certificates/certif3.png','Training Public Speaking','FESt Management x HIMATEKINS • 2023'],
+               ['assets/images/certificates/certif4.png','Webinar NAESCO FORMASDA','FORMASDA • 2024'],
+               ['assets/images/certificates/certif5.png','Peserta Seminar Nasional','FESt Management x HIMATEKINS • 2024'],
+               ['assets/images/certificates/certif6.png','FESt GOWORLD ASIA','FESt Management x HIMATEKINS • 2024'],
+               ['assets/images/certificates/certif7.png','Pelatihan Entrepreneurship','FESt Management x HIMATEKINS • 2024'],
+               ['assets/images/certificates/certif8.png','Pengerjaan Soal Anti Narkoba','Universitas Negeri Surabaya • 2023']
+             ]}"
+        >
+          <template x-for="(c, index) in certs" :key="c[1]">
+            <div
+              class="certificate-card group"
+              :data-aos="'fade-up'"
+              :data-aos-delay="index * 50"
+            >
+              <div
+                class="p-4 rounded-2xl transition-all duration-300 cursor-pointer"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/20' : 'glass hover:shadow-purple-500/20'"
+              >
+                <div class="image-container">
+                  <img
+                    :src="c[0]"
+                    :alt="c[1]"
+                    loading="lazy"
+                    class="w-full h-40 object-contain bg-white/5"
+                  />
+                </div>
+                <h6
+                  class="font-semibold text-sm mb-1 text-center"
+                  :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  x-text="c[1]"
+                ></h6>
+                <p
+                  class="text-xs text-center"
+                  :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+                >
+                  <span x-text="c[2]"></span>
+                </p>
+              </div>
+            </div>
+          </template>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/6282264628643" class="whatsapp-float" target="_blank" aria-label="Chat via WhatsApp">
-  <i class="uil uil-whatsapp"></i>
-</a>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 animate-fade-in-up">
+      <div class="container mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-4xl font-bold mb-4"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            My
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+              >Projects</span
+            >
+          </h2>
+          <p :class="darkMode ? 'text-gray-400' : 'text-gray-700'">
+            Saya dan tim telah mengerjakan berbagai proyek pengembangan
+          </p>
+        </div>
 
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          x-data="{
+               projects: [
+                 {
+                   title:'Sistem Rekam Medis Klinik',
+                   tech:'PHP, MySQL, Figma',
+                   img:'assets/images/project/project-image01.png',
+                   demo:'https://www.figma.com/proto/LxdMkCtAuQRohi1FyAyDEi/Rekam-Medis-Klinik-APS?node-id=154-530&t=aIksKzzvJpLWSbjs-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=154%3A65',
+                   hasDemo:true
+                 },
+                 {
+                   title:'Prototype UI (Figma)',
+                   tech:'UI/UX • Figma',
+                   img:'assets/images/project/project-image02.png',
+                   demo:'https://www.figma.com/proto/GXvP6eltFmFZDVsgmwYqV1/Untitled?node-id=1-52&node-type=canvas&t=Ee0vURmAiCdgu7YW-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A52',
+                   hasDemo:true
+                 },
+                 { title:'Management Caffe', tech:'Java Netbeans IDE', img:'assets/images/project/project-image03.png', demo:'#', hasDemo:false },
+                 { title:'Penjualan Laptop', tech:'Visual Basic, MySQL', img:'assets/images/project/project-image04.png', demo:'#', hasDemo:false },
+                 {
+                   title:'Interpolasi Stirling Calculator',
+                   tech:'HTML, CSS, JavaScript',
+                   img:'assets/images/project/project-image05.png',
+                   demo:'https://donnya24.github.io/interpolasi_stirling.github.io/',
+                   hasDemo:true
+                 },
+                 {
+                   title:'Maze Game Interactive',
+                   tech:'HTML5, JavaScript',
+                   img:'assets/images/project/project-image06.png',
+                   demo:'https://donnya24.github.io/mazegame/',
+                   hasDemo:true
+                 }
+               ]
+             }"
+        >
+          <template x-for="(project, index) in projects" :key="project.title">
+            <div
+              class="group card-hover"
+              :data-aos="'fade-up'"
+              :data-aos-delay="index * 100"
+            >
+              <div
+                class="p-6 rounded-2xl transition-all duration-300 hover:scale-105"
+                :class="darkMode ? 'glass-dark' : 'glass'"
+              >
+                <div
+                  class="aspect-video rounded-lg mb-4 overflow-hidden bg-white/5"
+                >
+                  <img
+                    :src="project.img"
+                    :alt="project.title"
+                    loading="lazy"
+                    class="w-full h-full object-contain"
+                  />
+                </div>
+                <h3
+                  class="font-bold text-lg mb-2 text-center"
+                  :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  x-text="project.title"
+                ></h3>
+                <p
+                  class="text-sm mb-4 text-center"
+                  :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+                  x-text="project.tech"
+                ></p>
+                <div class="text-center">
+                  <a
+                    :href="project.demo"
+                    @click="!project.hasDemo && (showAlert = true, alertMessage = 'Demo tidak tersedia untuk project ini', $event.preventDefault())"
+                    class="inline-flex items-center space-x-2 text-blue-500 hover:text-purple-500 transition-colors"
+                  >
+                    <i class="uil uil-external-link-alt" aria-hidden="true"></i>
+                    <span>Live Demo</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
-<footer class="footer py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-12 text-center">
+    <!-- Experience & Education -->
+    <section id="experience" class="py-20 px-4 animate-fade-in-up">
+      <div class="container mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-4xl font-bold mb-4"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            Experience &
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+              >Education</span
+            >
+          </h2>
+        </div>
 
-        <!-- Social Links -->
-        <ul class="social-links list-inline mb-3">
-        <li class="list-inline-item">
-            <a href="#" class="uil uil-dribbble" data-toggle="tooltip" data-placement="top" title="Dribbble"></a>
-        </li>
-        <li class="list-inline-item">
-            <a href="https://www.instagram.com/donny.a___" class="uil uil-instagram" data-toggle="tooltip" data-placement="top" title="Instagram"></a>
-        </li>
-        <li class="list-inline-item">
-            <a href="https://www.youtube.com/@donny.a12" class="uil uil-youtube" data-toggle="tooltip" data-placement="top" title="YouTube"></a>
-        </li>
-        <li class="list-inline-item">
-            <a href="https://github.com/donnya24" class="uil uil-github" data-toggle="tooltip" data-placement="top" title="GitHub"></a>
-        </li>
-        <li class="list-inline-item">
-            <a href="https://www.linkedin.com/in/donny-andika-kurniawan-15923131b" class="uil uil-linkedin" data-toggle="tooltip" data-placement="top" title="LinkedIn"></a>
-        </li>
+        <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <!-- Education -->
+          <div data-aos="fade-right">
+            <h3
+              class="text-2xl font-bold mb-6 flex items-center gap-2"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              <i class="uil uil-graduation-cap text-purple-500"></i>
+              Education
+            </h3>
+
+            <div class="space-y-6">
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div
+                  class="absolute -left-3 top-8 w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
+                ></div>
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    S1 Pendidikan Teknologi Informasi
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+                    >2023 — Sekarang</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  Universitas Negeri Surabaya
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Mahasiswa aktif semester 5, fokus pada pengembangan antarmuka,
+                  kolaborasi tim, dan adaptif terhadap teknologi baru.
+                </p>
+              </div>
+
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div
+                  class="absolute -left-3 top-8 w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
+                ></div>
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Program Ilmu Pengetahuan Alam
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+                    >2020 — 2023</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  SMAN 1 Gondang
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Disiplin dan aktif mengikuti berbagai kegiatan, minat tinggi
+                  pada bidang teknologi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div data-aos="fade-left">
+            <h3
+              class="text-2xl font-bold mb-6 flex items-center gap-2"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              <i class="uil uil-suitcase-alt text-blue-500"></i>
+              Experience
+            </h3>
+
+            <div class="space-y-6">
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Perancangan Aplikasi Rekam Medis Klinik (Web)
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full border border-white/20"
+                    :class="darkMode ? 'text-gray-200' : 'text-gray-700'"
+                    >2025</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  VSCode, PHP Native, MySQL, Figma
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Analisis kebutuhan pengguna dan back-end developer untuk
+                  sistem rekam medis berbasis web.
+                </p>
+              </div>
+
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Analisis & Perancangan Sistem Rekam Medis
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full border border-white/20"
+                    :class="darkMode ? 'text-gray-200' : 'text-gray-700'"
+                    >2025</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  Draw.io, Whimsical, MySQL, Dia
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Menyusun ERD, DFD, UCD, dan Class Diagram untuk rancangan
+                  sistem terintegrasi.
+                </p>
+              </div>
+
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Aplikasi Penjualan Laptop
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full border border-white/20"
+                    :class="darkMode ? 'text-gray-200' : 'text-gray-700'"
+                    >2024</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  Visual Basic, MySQL
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  CRUD, laporan transaksi, dan manajemen inventory.
+                </p>
+              </div>
+
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Mobile App BMI
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full border border-white/20"
+                    :class="darkMode ? 'text-gray-200' : 'text-gray-700'"
+                    >2024</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  Flutter, Dart, Figma
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Aplikasi BMI dengan antarmuka ramah pengguna dan penyimpanan
+                  riwayat.
+                </p>
+              </div>
+
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Perancangan Aplikasi Manajemen Caffé
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full border border-white/20"
+                    :class="darkMode ? 'text-gray-200' : 'text-gray-700'"
+                    >2024</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  Java Netbeans IDE
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Mendesain antarmuka dan alur kerja aplikasi manajemen kafe
+                  yang mencakup fitur pemesanan, pembayaran, dan manajemen stok
+                  bahan baku.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 animate-fade-in-up">
+      <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-4xl font-bold mb-4"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            Get In Touch
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+              >with Me</span
+            >
+          </h2>
+          <p :class="darkMode ? 'text-gray-400' : 'text-gray-700'">
+            Siap berdiskusi tentang peluang kolaborasi dan proyek baru.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-10">
+          <!-- Phone -->
+          <div
+            class="contact-card p-6 rounded-2xl text-center"
+            :class="darkMode ? 'glass-dark' : 'glass'"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/30 mb-4"
+            >
+              <i
+                class="uil uil-phone text-3xl text-emerald-500"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <h5
+              class="font-bold mt-3"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              Telepon
+            </h5>
+            <p
+              class="text-sm mt-1"
+              :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+            >
+              +62 822-6462-8643
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div
+            class="contact-card p-6 rounded-2xl text-center"
+            :class="darkMode ? 'glass-dark' : 'glass'"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 dark:bg-rose-900/30 mb-4"
+            >
+              <i
+                class="uil uil-envelope text-3xl text-rose-500"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <h5
+              class="font-bold mt-3"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              Email
+            </h5>
+            <p
+              class="text-sm mt-1"
+              :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+            >
+              donny.23024@mhs.unesa.ac.id
+            </p>
+          </div>
+
+          <!-- Address -->
+          <div
+            class="contact-card p-6 rounded-2xl text-center"
+            :class="darkMode ? 'glass-dark' : 'glass'"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 dark:bg-amber-900/30 mb-4"
+            >
+              <i
+                class="uil uil-map-marker text-3xl text-amber-500"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <h5
+              class="font-bold mt-3"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              Alamat
+            </h5>
+            <p
+              class="text-sm mt-1"
+              :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+            >
+              Jl. Ke Ngluyu, Gondangkulon, Gondang, Nganjuk, Jawa Timur 64451
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact CTA -->
+        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+          <a
+            href="mailto:donny.23024@mhs.unesa.ac.id"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+          >
+            <i class="uil uil-message" aria-hidden="true"></i> Kirim Email
+          </a>
+          <a
+            href="https://wa.me/6282264628643"
+            target="_blank"
+            class="ml-3 inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+            :class="darkMode ? 'glass-dark text-white' : 'glass text-gray-800'"
+          >
+            <i class="uil uil-whatsapp" aria-hidden="true"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button
+      @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+      x-show="showScrollTop"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 transform scale-90"
+      x-transition:enter-end="opacity-100 transform scale-100"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="opacity-100 transform scale-100"
+      x-transition:leave-end="opacity-0 transform scale-90"
+      class="fixed bottom-5 left-5 z-40 inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-110"
+      aria-label="Scroll to top"
+    >
+      <i class="uil uil-arrow-up text-xl"></i>
+    </button>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/6282264628643"
+      target="_blank"
+      aria-label="Chat via WhatsApp"
+      class="fixed bottom-5 right-5 inline-flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 text-white shadow-lg hover:shadow-emerald-500/30 transition will-change-transform"
+      x-init="(() => { let last = 0; window.addEventListener('scroll', () => { const y = window.scrollY || document.documentElement.scrollTop; const dir = y > last ? 1 : -1; last = y; $el.style.transform = `translateY(${dir*3}px)`; clearTimeout(window.__wa); window.__wa = setTimeout(() => { $el.style.transform = 'translateY(0)' }, 160); }) })()"
+    >
+      <i class="uil uil-whatsapp text-2xl" aria-hidden="true"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 animate-fade-in-up">
+      <div class="container mx-auto text-center">
+        <ul
+          class="flex items-center justify-center gap-5 text-2xl mb-4"
+          data-aos="fade-up"
+        >
+          <li>
+            <a
+              href="#"
+              class="uil uil-dribbble transition-colors"
+              :class="darkMode ? 'text-white hover:text-purple-400' : 'text-gray-700 hover:text-purple-500'}"
+              aria-label="Dribbble"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/donny.a___"
+              class="uil uil-instagram transition-colors"
+              :class="darkMode ? 'text-white hover:text-purple-400' : 'text-gray-700 hover:text-purple-500'}"
+              aria-label="Instagram"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/@donny.a12"
+              class="uil uil-youtube transition-colors"
+              :class="darkMode ? 'text-white hover:text-purple-400' : 'text-gray-700 hover:text-purple-500'}"
+              aria-label="YouTube"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/donnya24"
+              class="uil uil-github transition-colors"
+              :class="darkMode ? 'text-white hover:text-purple-400' : 'text-gray-700 hover:text-purple-500'}"
+              aria-label="GitHub"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/donny-andika-kurniawan-15923131b"
+              class="uil uil-linkedin transition-colors"
+              :class="darkMode ? 'text-white hover:text-purple-400' : 'text-gray-700 hover:text-purple-500'}"
+              aria-label="LinkedIn"
+            ></a>
+          </li>
         </ul>
-
-        <!-- Copyright -->
-        <p class="copyright-text text-center mb-0">
+        <p
+          class="text-sm"
+          :class="darkMode ? 'text-gray-300' : 'text-gray-700'"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           &copy; 2025 Donny Andika Kurniawan
         </p>
+      </div>
+    </footer>
 
+    <!-- Inline Alert (Alpine) -->
+    <div
+      x-show="showAlert"
+      x-transition.opacity
+      @click="showAlert=false"
+      class="fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-4 bg-black/30"
+    >
+      <div
+        @click.stop
+        class="w-full max-w-sm p-4 rounded-2xl text-center animate-scale-in"
+        :class="darkMode ? 'glass-dark text-white' : 'glass text-gray-800'"
+      >
+        <p x-text="alertMessage"></p>
       </div>
     </div>
-  </div>
-</footer>
 
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Headroom.js"></script>
-    <script src="js/jQuery.headroom.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/custom.js"></script>
+    <!-- Scripts -->
+    <script src="assets/js/alpine.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-    AOS.init();
-    </script>
-
-    <script>
-    const waButton = document.querySelector('.whatsapp-float');
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', function () {
-        let scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Hitung arah scroll
-        const direction = scrollTop > lastScrollTop ? 1 : -1;
-        lastScrollTop = scrollTop;
-
-        // Efek menggeser vertikal sedikit (±3px)
-        waButton.style.transform = `translateY(${direction * 3}px)`;
-        
-        // Reset ke posisi normal setelah delay
-        clearTimeout(window.scrollResetTimer);
-        window.scrollResetTimer = setTimeout(() => {
-        waButton.style.transform = 'translateY(0)';
-        }, 200);
-    });
-    </script>
-    <script>
-        $('.owl-carousel').owlCarousel({
-    loop: true,
-    margin: 10,
-    responsiveClass: true,
-    responsive: {
-        0: {
-        items: 1,
-        margin: 0
-        },
-        600: {
-        items: 2
-        },
-        1000: {
-        items: 3
-        }
-    }
-    });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-    <script>
-    function showDemoAlert(event) {
-    event.preventDefault();
-    Swal.fire({
-        icon: 'info',
-        title: 'Demo Tidak Tersedia',
-        text: 'Halaman demo pada proyek ini tidak tersedia',
-        confirmButtonText: 'Mengerti',
-        timer: 3000
-    });
-    }
-    </script>
-
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

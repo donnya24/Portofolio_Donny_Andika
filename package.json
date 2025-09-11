@@ -1,0 +1,22 @@
+{
+  "name": "donny-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Donny Andika Kurniawan",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server --port=3000",
+    "build": "echo 'No build process configured'",
+    "deploy": "echo 'No deployment process configured'"
+  },
+  "keywords": [
+    "portfolio",
+    "frontend",
+    "developer",
+    "ui/ux"
+  ],
+  "author": "Donny Andika Kurniawan",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
