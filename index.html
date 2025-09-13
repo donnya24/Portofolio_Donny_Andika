@@ -1,101 +1,465 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ darkMode: false, menuOpen: false, currentSection: 'home' }" :class="{ 'dark': darkMode }">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - Donny Andika Kurniawan</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet">
-  <script src="https://unpkg.com/alpinejs" defer></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-</head>
-<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio Donny Andika Kurniawan - Frontend Developer & UI/UX Designer"
+    />
+    <title>Donny Andika Kurniawan - Portfolio</title>
 
-  <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full shadow bg-white dark:bg-gray-800 z-50">
-    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-      <a href="#home" class="text-xl font-bold">Donny</a>
-      <div class="hidden md:flex space-x-6">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#portfolio" class="nav-link">Portfolio</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
-      <div class="flex items-center space-x-4">
-        <button @click="darkMode = !darkMode">
-          <i class="uil" :class="darkMode ? 'uil-sun' : 'uil-moon'"></i>
-        </button>
-        <button class="md:hidden" @click="menuOpen = !menuOpen">
-          <i class="uil uil-bars"></i>
-        </button>
+    <!-- Tailwind Config (harus sebelum CDN Tailwind) -->
+    <script>
+      tailwind = {
+        config: {
+          darkMode: "class",
+          theme: {
+            extend: {
+              animation: {
+                float: "float 6s ease-in-out infinite",
+                glow: "glow 2s ease-in-out infinite alternate",
+                "slide-up": "slideUp 0.5s ease-out",
+                "fade-in": "fadeIn 1s ease-out",
+                "text-slide": "textSlide 9s infinite",
+                "pulse-glow": "pulseGlow 2s infinite",
+                "bounce-in": "bounceIn 0.8s ease-out",
+                "scale-in": "scaleIn 0.6s ease-out",
+                "fade-in-up": "fadeInUp 0.8s ease-out",
+                "float-up": "floatUp 3s ease-in-out infinite",
+                "bounce-float": "bounceFloat 4s ease-in-out infinite",
+                dots: "dots 1.5s infinite",
+              },
+              keyframes: {
+                float: {
+                  "0%, 100%": { transform: "translateY(0px)" },
+                  "50%": { transform: "translateY(-20px)" },
+                },
+                glow: {
+                  "0%": { boxShadow: "0 0 5px rgba(59, 130, 246, 0.5)" },
+                  "100%": {
+                    boxShadow:
+                      "0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.4)",
+                  },
+                },
+                slideUp: {
+                  "0%": { transform: "translateY(20px)", opacity: 0 },
+                  "100%": { transform: "translateY(0)", opacity: 1 },
+                },
+                fadeIn: {
+                  "0%": { opacity: 0 },
+                  "100%": { opacity: 1 },
+                },
+                textSlide: {
+                  "0%, 33%": { transform: "translateY(0%)" },
+                  "33.33%, 66%": { transform: "translateY(-100%)" },
+                  "66.66%, 100%": { transform: "translateY(-200%)" },
+                },
+                pulseGlow: {
+                  "0%, 100%": {
+                    boxShadow: "0 0 10px rgba(59, 130, 246, 0.5)",
+                  },
+                  "50%": {
+                    boxShadow: "0 0 30px rgba(59, 130, 246, 0.8)",
+                  },
+                },
+                bounceIn: {
+                  "0%": { transform: "scale(0.8)", opacity: 0 },
+                  "50%": { transform: "scale(1.05)" },
+                  "100%": { transform: "scale(1)", opacity: 1 },
+                },
+                scaleIn: {
+                  "0%": { transform: "scale(0.9)", opacity: 0 },
+                  "100%": { transform: "scale(1)", opacity: 1 },
+                },
+                fadeInUp: {
+                  "0%": { transform: "translateY(30px)", opacity: 0 },
+                  "100%": { transform: "translateY(0)", opacity: 1 },
+                },
+                floatUp: {
+                  "0%, 100%": { transform: "translateY(0px)" },
+                  "50%": { transform: "translateY(-10px)" },
+                },
+                bounceFloat: {
+                  "0%, 100%": { transform: "translateY(0px)" },
+                  "50%": { transform: "translateY(-15px)" },
+                },
+                dots: {
+                  "0%, 20%": {
+                    color: "rgba(255, 255, 255, 0)",
+                    textShadow:
+                      "0.25em 0 0 rgba(255, 255, 255, 0), 0.5em 0 0 rgba(255, 255, 255, 0)",
+                  },
+                  "40%": {
+                    color: "white",
+                    textShadow:
+                      "0.25em 0 0 rgba(255, 255, 255, 0), 0.5em 0 0 rgba(255, 255, 255, 0)",
+                  },
+                  "60%": {
+                    textShadow:
+                      "0.25em 0 0 white, 0.5em 0 0 rgba(255, 255, 255, 0)",
+                  },
+                  "80%, 100%": {
+                    textShadow: "0.25em 0 0 white, 0.5em 0 0 white",
+                  },
+                },
+              },
+              backdropBlur: { xs: "2px" },
+            },
+          },
+        },
+      };
+      // kompatibel dengan CDN tailwind lama:
+      window.tailwind = tailwind.config ? tailwind : { config: tailwind.config };
+    </script>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Unicons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body
+    x-data="{ 
+      darkMode: false, 
+      mobileMenu: false,
+      scrolled: false,
+      currentSection: 'about',
+      showAlert: false,
+      alertMessage: '',
+      showScrollTop: false
+    }"
+    :class="darkMode ? 'dark bg-gray-900' : 'bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100'"
+    class="transition-colors duration-500"
+  >
+    <!-- Animated Particles Background -->
+    <div class="particles" x-show="!darkMode" aria-hidden="true">
+      <template x-for="i in 20" :key="i">
+        <div
+          class="particle"
+          :style="`left: ${Math.random() * 100}%; animation-duration: ${Math.random() * 20 + 10}s; animation-delay: ${Math.random() * 5}s;`"
+        ></div>
+      </template>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full top-0 z-50 transition-all duration-300 glass"
+      :class="darkMode ? 'glass-dark' : ''"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <a
+            href="#"
+            class="flex items-center space-x-2 text-lg font-bold"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            <i
+              class="uil uil-user text-2xl bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent"
+              aria-hidden="true"
+            ></i>
+            <span class="hidden sm:inline">Donny Andika Kurniawan</span>
+            <span class="sm:hidden">DAK</span>
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <a
+              href="#about"
+              @click="currentSection = 'about'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'about' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-user-circle" aria-hidden="true"></i
+              ><span>About</span>
+            </a>
+            <a
+              href="#skills"
+              @click="currentSection = 'skills'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'skills' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-brain" aria-hidden="true"></i
+              ><span>Skills</span>
+            </a>
+            <a
+              href="#certificates"
+              @click="currentSection = 'certificates'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'certificates' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-award" aria-hidden="true"></i
+              ><span>Certificates</span>
+            </a>
+            <a
+              href="#projects"
+              @click="currentSection = 'projects'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'projects' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-scenery" aria-hidden="true"></i
+              ><span>Projects</span>
+            </a>
+            <a
+              href="#experience"
+              @click="currentSection = 'experience'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'experience' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-file-alt" aria-hidden="true"></i
+              ><span>Experience</span>
+            </a>
+            <a
+              href="#contact"
+              @click="currentSection = 'contact'"
+              class="nav-link flex items-center space-x-2 transition-all duration-300 hover:scale-105"
+              :class="currentSection === 'contact' ? 'text-blue-500' : (darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900')"
+            >
+              <i class="uil uil-envelope" aria-hidden="true"></i
+              ><span>Contact</span>
+            </a>
+          </div>
+
+          <!-- Right Side Controls -->
+          <div class="flex items-center space-x-4">
+            <!-- Dark Mode Toggle -->
+            <button
+              @click="darkMode = !darkMode"
+              class="p-2 rounded-full transition-all duration-300 hover:scale-110"
+              :class="darkMode ? 'bg-gray-700 text-yellow-400' : 'bg-white/50 text-blue-600'"
+              aria-label="Toggle theme"
+            >
+              <i
+                :class="darkMode ? 'uil uil-sun' : 'uil uil-moon'"
+                class="text-xl"
+              ></i>
+            </button>
+
+            <!-- Mobile Menu Toggle -->
+            <button
+              @click="mobileMenu = !mobileMenu"
+              class="lg:hidden p-2"
+              aria-label="Toggle menu"
+            >
+              <div class="w-6 h-6 flex flex-col justify-center space-y-1.5">
+                <span
+                  class="navbar-toggler-icon block h-0.5 w-6 bg-current transform transition-all duration-300"
+                  :class="mobileMenu ? 'rotate-45 translate-y-2' : ''"
+                ></span>
+                <span
+                  class="navbar-toggler-icon block h-0.5 w-4 bg-current transition-all duration-300 ml-auto"
+                  :class="mobileMenu ? 'opacity-0' : ''"
+                ></span>
+                <span
+                  class="navbar-toggler-icon block h-0.5 w-5 bg-current transform transition-all duration-300 ml-auto"
+                  :class="mobileMenu ? '-rotate-45 -translate-y-2 w-6' : ''"
+                ></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          x-show="mobileMenu"
+          x-transition:enter="transition ease-out duration-300"
+          x-transition:enter-start="opacity-0 transform -translate-y-2"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-200"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="lg:hidden py-4 border-t"
+          :class="darkMode ? 'border-gray-700' : 'border-white/30'"
+        >
+          <div class="flex flex-col space-y-4">
+            <a
+              href="#about"
+              @click="mobileMenu = false; currentSection = 'about'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-user-circle"></i><span>About Me</span>
+            </a>
+            <a
+              href="#skills"
+              @click="mobileMenu = false; currentSection = 'skills'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-brain"></i><span>My Skills</span>
+            </a>
+            <a
+              href="#certificates"
+              @click="mobileMenu = false; currentSection = 'certificates'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-award"></i><span>Certificates</span>
+            </a>
+            <a
+              href="#projects"
+              @click="mobileMenu = false; currentSection = 'projects'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-scenery"></i><span>Projects</span>
+            </a>
+            <a
+              href="#experience"
+              @click="mobileMenu = false; currentSection = 'experience'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-file-alt"></i><span>Experience</span>
+            </a>
+            <a
+              href="#contact"
+              @click="mobileMenu = false; currentSection = 'contact'"
+              class="flex items-center space-x-2 px-4 py-2 rounded-lg transition-all"
+              :class="darkMode ? 'hover:bg-gray-800 text-gray-300' : 'hover:bg-white/30 text-gray-700'"
+            >
+              <i class="uil uil-envelope"></i><span>Contact</span>
+            </a>
+          </div>
+        </div>
       </div>
     </nav>
-    <div class="md:hidden" x-show="menuOpen" x-transition>
-      <a href="#home" class="block py-2 px-6 nav-link">Home</a>
-      <a href="#about" class="block py-2 px-6 nav-link">About</a>
-      <a href="#skills" class="block py-2 px-6 nav-link">Skills</a>
-      <a href="#portfolio" class="block py-2 px-6 nav-link">Portfolio</a>
-      <a href="#contact" class="block py-2 px-6 nav-link">Contact</a>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <section id="home" class="h-screen flex flex-col justify-center items-center text-center relative overflow-hidden">
-    <div class="absolute w-full h-full top-0 left-0 z-0" id="particles"></div>
-    <div class="z-10" data-aos="fade-up">
-      <h1 class="text-5xl font-bold mb-4">Hi, I'm Donny</h1>
-      <p class="text-xl mb-6">Frontend Developer & Designer</p>
-      <a href="#contact" class="bg-blue-500 text-white px-6 py-3 rounded-lg">Hire Me</a>
-    </div>
-    <div class="absolute bottom-5 text-sm opacity-75 animate-bounce name-scrolling">Scroll Down</div>
-  </section>
+    <!-- Hero/About Section -->
+    <section id="about" class="min-h-screen flex items-center pt-20 px-4">
+      <div class="container mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Image -->
+          <div class="order-2 lg:order-1 animate-float" data-aos="fade-right">
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl opacity-30"
+              ></div>
+              <img
+                src="assets/images/undraw/profil_donny.png"
+                alt="Donny Andika Kurniawan"
+                loading="eager"
+                class="relative w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full object-contain bg-white/10 border-4 border-white/20 shadow-2xl"
+              />
+            </div>
+          </div>
 
-  <!-- About -->
-  <main>
-    <section id="about" class="container mx-auto py-20 px-6" data-aos="fade-right">
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="max-w-2xl">I am passionate about web development, UI/UX design, and creating seamless digital experiences.</p>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="container mx-auto py-20 px-6" data-aos="fade-left">
-      <h2 class="text-3xl font-bold mb-6">Skills</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <img src="assets/images/skills/html.png" alt="Logo HTML" class="skill-icon">
-        <img src="assets/images/skills/css.png" alt="Logo CSS" class="skill-icon">
-        <img src="assets/images/skills/js.png" alt="Logo JavaScript" class="skill-icon">
-        <img src="assets/images/skills/tailwind.png" alt="Logo TailwindCSS" class="skill-icon">
+          <!-- Content -->
+          <div
+            class="order-1 lg:order-2 text-center lg:text-left"
+            data-aos="fade-left"
+          >
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 flex flex-wrap items-center justify-center lg:justify-start leading-tight"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              <span class="self-center">Hello, I'm</span>
+              <span class="sr-only">Donny Andika Kurniawan</span>
+              <div class="inline-block ml-2 self-center">
+                <span
+                  class="name-scrolling text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+                ></span>
+              </div>
+            </h1>
+            <p
+              class="text-lg mb-8 mt-6 leading-relaxed text-justify"
+              :class="darkMode ? 'text-gray-300' : 'text-gray-700'"
+            >
+              Siap menghadirkan solusi antarmuka yang responsif dan inovatif,
+              dengan komitmen untuk terus belajar dan memberikan kontribusi
+              terbaik secara kolaboratif bersama tim.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <a
+                href="https://drive.google.com/file/d/1gTFdzsiz5UNciP-Nygj9DxacH1j3okFS/view?usp=sharing"
+                target="_blank"
+                class="group px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+                :class="darkMode ? 'glass-dark text-white hover:bg-white/10' : 'glass text-gray-800 hover:bg-black/10'"
+              >
+                <i class="uil uil-file-alt" aria-hidden="true"></i
+                ><span>Download CV Saya</span>
+                <i
+                  class="uil uil-arrow-right transform transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                ></i>
+              </a>
+              <a
+                href="mailto:donny.23024@mhs.unesa.ac.id"
+                class="group px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center justify-center space-x-2"
+              >
+                <i class="uil uil-envelope" aria-hidden="true"></i
+                ><span>Hubungi Saya!</span>
+                <i
+                  class="uil uil-arrow-right transform transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="container mx-auto py-20 px-6" data-aos="zoom-in">
-      <h2 class="text-3xl font-bold mb-6">Portfolio</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="portfolio-card">Project 1</div>
-        <div class="portfolio-card">Project 2</div>
-        <div class="portfolio-card">Project 3</div>
-      </div>
-    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 animate-fade-in-up">
+      <div class="container mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-4xl font-bold mb-4"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            My
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+              >Skills</span
+            >
+          </h2>
+          <p :class="darkMode ? 'text-gray-400' : 'text-gray-700'">
+            Saya memiliki pemahaman dasar mengenai berbagai tools dan teknologi
+          </p>
+        </div>
 
-    <!-- Contact -->
-    <section id="contact" class="container mx-auto py-20 px-6" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-6">Contact</h2>
-      <form class="max-w-xl space-y-4">
-        <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded">
-        <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded">
-        <textarea placeholder="Your Message" class="w-full px-4 py-2 border rounded"></textarea>
-        <button class="bg-blue-500 text-white px-6 py-3 rounded-lg">Send</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6">
-    <p>© 2025 Donny Andika Kurniawan. All rights reserved.</p>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+        <div
+          class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 max-w-4xl mx-auto"
+          x-data="{ skills: [
+               ['assets/images/skills/html.png','HTML'],
+               ['assets/images/skills/css.png','CSS'],
+               ['assets/images/skills/js.png','JavaScript'],
+               ['assets/images/skills/php.png','PHP'],
+               ['assets/images/skills/mysql.png','MySQL'],
+               ['assets/images/skills/figma.png','Figma'],
+               ['assets/images/skills/vscode.png','VS Code'],
+               ['assets/images/skills/netbeans.png','NetBeans'],
+               ['assets/images/skills/flutter.png','Flutter'],
+               ['assets/images/skills/dart.png','Dart'],
+               ['assets/images/skills/Draw.io.png','Draw.io'],
+               ['assets/images/skills/Bootstrap.png','Bootstrap']
+             ]}"
+        >
+          <template x-for="(skill, index) in skills" :key="skill[1]">
+            <div
+              class="group card-hover"
+              :data-aos="'fade-up'"
+              :data-aos-delay="index * 50"
+            >
+              <div
+                class="p-6 rounded-2xl transition-all duration-300 hover:scale-110 hover:animate-pulse-glow cursor-pointer"
+                :class="darkMode ? 'glass-dark' : 'glass'"
+              >
+                <img
+                  :src="skill[0]"
+       
