@@ -110,7 +110,9 @@
         },
       };
       // kompatibel dengan CDN tailwind lama:
-      window.tailwind = tailwind.config ? tailwind : { config: tailwind.config };
+      window.tailwind = tailwind.config
+        ? tailwind
+        : { config: tailwind.config };
     </script>
 
     <!-- Tailwind CSS (CDN) -->
@@ -462,4 +464,679 @@
               >
                 <img
                   :src="skill[0]"
-       
+                  :alt="skill[1]"
+                  loading="lazy"
+                  class="mx-auto w-12 sm:w-14 md:w-16 aspect-square object-contain"
+                />
+                <p
+                  class="text-xs text-center font-semibold mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-700'"
+                  x-text="skill[1]"
+                ></p>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20 px-4 animate-fade-in-up">
+      <div class="container mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-4xl font-bold mb-4"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            My
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+              >Certificates</span
+            >
+          </h2>
+          <p :class="darkMode ? 'text-gray-400' : 'text-gray-700'">
+            Saya telah mengikuti beberapa pelatihan dan mendapatkan sertifikat
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+          x-data="{ certs: [
+               ['assets/images/certificates/certif1.png','Sie PDD Expo Campus','SMAN 1 Gondang • 2024'],
+               ['assets/images/certificates/certif2.png','Peserta Kuliah Tamu','Universitas Negeri Surabaya • 2023'],
+               ['assets/images/certificates/certif3.png','Training Public Speaking','FESt Management x HIMATEKINS • 2023'],
+               ['assets/images/certificates/certif4.png','Webinar NAESCO FORMASDA','FORMASDA • 2024'],
+               ['assets/images/certificates/certif5.png','Peserta Seminar Nasional','FESt Management x HIMATEKINS • 2024'],
+               ['assets/images/certificates/certif6.png','FESt GOWORLD ASIA','FESt Management x HIMATEKINS • 2024'],
+               ['assets/images/certificates/certif7.png','Pelatihan Entrepreneurship','FESt Management x HIMATEKINS • 2024'],
+               ['assets/images/certificates/certif8.png','Pengerjaan Soal Anti Narkoba','Universitas Negeri Surabaya • 2023']
+             ]}"
+        >
+          <template x-for="(c, index) in certs" :key="c[1]">
+            <div
+              class="certificate-card group"
+              :data-aos="'fade-up'"
+              :data-aos-delay="index * 50"
+            >
+              <div
+                class="p-4 rounded-2xl transition-all duration-300 cursor-pointer"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/20' : 'glass hover:shadow-purple-500/20'"
+              >
+                <div class="image-container">
+                  <img
+                    :src="c[0]"
+                    :alt="c[1]"
+                    loading="lazy"
+                    class="w-full h-40 object-contain bg-white/5"
+                  />
+                </div>
+                <h6
+                  class="font-semibold text-sm mb-1 text-center"
+                  :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  x-text="c[1]"
+                ></h6>
+                <p
+                  class="text-xs text-center"
+                  :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+                >
+                  <span x-text="c[2]"></span>
+                </p>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 animate-fade-in-up">
+      <div class="container mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-4xl font-bold mb-4"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            My
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+              >Projects</span
+            >
+          </h2>
+          <p :class="darkMode ? 'text-gray-400' : 'text-gray-700'">
+            Saya dan tim telah mengerjakan berbagai proyek pengembangan
+          </p>
+        </div>
+
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          x-data="{
+               projects: [
+                 {
+                   title:'Sistem Rekam Medis Klinik',
+                   tech:'PHP, MySQL, Figma',
+                   img:'assets/images/project/project-image01.png',
+                   demo:'https://www.figma.com/proto/LxdMkCtAuQRohi1FyAyDEi/Rekam-Medis-Klinik-APS?node-id=154-530&t=aIksKzzvJpLWSbjs-0&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=154%3A65',
+                   hasDemo:true
+                 },
+                 {
+                   title:'Prototype UI (Figma)',
+                   tech:'UI/UX • Figma',
+                   img:'assets/images/project/project-image02.png',
+                   demo:'https://www.figma.com/proto/GXvP6eltFmFZDVsgmwYqV1/Untitled?node-id=1-52&node-type=canvas&t=Ee0vURmAiCdgu7YW-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A52',
+                   hasDemo:true
+                 },
+                 { title:'Management Caffe', tech:'Java Netbeans IDE', img:'assets/images/project/project-image03.png', demo:'#', hasDemo:false },
+                 { title:'Penjualan Laptop', tech:'Visual Basic, MySQL', img:'assets/images/project/project-image04.png', demo:'#', hasDemo:false },
+                 {
+                   title:'Interpolasi Stirling Calculator',
+                   tech:'HTML, CSS, JavaScript',
+                   img:'assets/images/project/project-image05.png',
+                   demo:'https://donnya24.github.io/interpolasi_stirling.github.io/',
+                   hasDemo:true
+                 },
+                 {
+                   title:'Maze Game Interactive',
+                   tech:'HTML5, JavaScript',
+                   img:'assets/images/project/project-image06.png',
+                   demo:'https://donnya24.github.io/mazegame/',
+                   hasDemo:true
+                 }
+               ]
+             }"
+        >
+          <template x-for="(project, index) in projects" :key="project.title">
+            <div
+              class="group card-hover"
+              :data-aos="'fade-up'"
+              :data-aos-delay="index * 100"
+            >
+              <div
+                class="p-6 rounded-2xl transition-all duration-300 hover:scale-105"
+                :class="darkMode ? 'glass-dark' : 'glass'"
+              >
+                <div
+                  class="aspect-video rounded-lg mb-4 overflow-hidden bg-white/5"
+                >
+                  <img
+                    :src="project.img"
+                    :alt="project.title"
+                    loading="lazy"
+                    class="w-full h-full object-contain"
+                  />
+                </div>
+                <h3
+                  class="font-bold text-lg mb-2 text-center"
+                  :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  x-text="project.title"
+                ></h3>
+                <p
+                  class="text-sm mb-4 text-center"
+                  :class="darkMode ? 'text-gray-400' : 'text-gray-600'"
+                  x-text="project.tech"
+                ></p>
+                <div class="text-center">
+                  <a
+                    :href="project.demo"
+                    @click="!project.hasDemo && (showAlert = true, alertMessage = 'Demo tidak tersedia untuk project ini', $event.preventDefault())"
+                    class="inline-flex items-center space-x-2 text-blue-500 hover:text-purple-500 transition-colors"
+                  >
+                    <i class="uil uil-external-link-alt" aria-hidden="true"></i>
+                    <span>Live Demo</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience" class="py-20 px-4 animate-fade-in-up">
+      <div class="container mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-4xl font-bold mb-4"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            Experience &
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+              >Education</span
+            >
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <!-- Education -->
+          <div data-aos="fade-right">
+            <h3
+              class="text-2xl font-bold mb-6 flex items-center gap-2"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              <i class="uil uil-graduation-cap text-purple-500"></i>
+              Education
+            </h3>
+
+            <div class="space-y-6">
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div
+                  class="absolute -left-3 top-8 w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
+                ></div>
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    S1 Pendidikan Teknologi Informasi
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+                    >2023 — Sekarang</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  Universitas Negeri Surabaya
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Mahasiswa aktif semester 5, fokus pada pengembangan antarmuka,
+                  kolaborasi tim, dan adaptif terhadap teknologi baru.
+                </p>
+              </div>
+
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div
+                  class="absolute -left-3 top-8 w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
+                ></div>
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Program Ilmu Pengetahuan Alam
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+                    >2020 — 2023</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  SMAN 1 Gondang
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Disiplin dan aktif mengikuti berbagai kegiatan, minat tinggi
+                  pada bidang teknologi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div data-aos="fade-left">
+            <h3
+              class="text-2xl font-bold mb-6 flex items-center gap-2"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              <i class="uil uil-suitcase-alt text-blue-500"></i>
+              Experience
+            </h3>
+
+            <div class="space-y-6">
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Perancangan Aplikasi Rekam Medis Klinik (Web)
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full border border-white/20"
+                    :class="darkMode ? 'text-gray-200' : 'text-gray-700'"
+                    >2025</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  VSCode, PHP Native, MySQL, Figma
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Analisis kebutuhan pengguna dan back-end developer untuk
+                  sistem rekam medis berbasis web.
+                </p>
+              </div>
+
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Analisis & Perancangan Sistem Rekam Medis
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full border border-white/20"
+                    :class="darkMode ? 'text-gray-200' : 'text-gray-700'"
+                    >2025</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  Draw.io, Whimsical, MySQL, Dia
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Menyusun ERD, DFD, UCD, dan Class Diagram untuk rancangan
+                  sistem terintegrasi.
+                </p>
+              </div>
+
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Aplikasi Penjualan Laptop
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full border border-white/20"
+                    :class="darkMode ? 'text-gray-200' : 'text-gray-700'"
+                    >2024</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  Visual Basic, MySQL
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  CRUD, laporan transaksi, dan manajemen inventory.
+                </p>
+              </div>
+
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Mobile App BMI
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full border border-white/20"
+                    :class="darkMode ? 'text-gray-200' : 'text-gray-700'"
+                    >2024</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  Flutter, Dart, Figma
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Aplikasi BMI dengan antarmuka ramah pengguna dan penyimpanan
+                  riwayat.
+                </p>
+              </div>
+
+              <div
+                class="relative p-6 rounded-2xl transition-all duration-300 card-hover"
+                :class="darkMode ? 'glass-dark hover:shadow-blue-500/10' : 'glass hover:shadow-purple-500/10'"
+              >
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <h4
+                    class="font-semibold text-lg"
+                    :class="darkMode ? 'text-white' : 'text-gray-800'"
+                  >
+                    Perancangan Aplikasi Manajemen Caffé
+                  </h4>
+                  <span
+                    class="text-xs px-2 py-1 rounded-full border border-white/20"
+                    :class="darkMode ? 'text-gray-200' : 'text-gray-700'"
+                    >2024</span
+                  >
+                </div>
+                <p class="text-sm mt-1 text-blue-500 font-semibold">
+                  Java Netbeans IDE
+                </p>
+                <p
+                  class="text-sm mt-2"
+                  :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+                >
+                  Mendesain antarmuka dan alur kerja aplikasi manajemen kafe
+                  yang mencakup fitur pemesanan, pembayaran, dan manajemen stok
+                  bahan baku.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 animate-fade-in-up">
+      <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-4xl font-bold mb-4"
+            :class="darkMode ? 'text-white' : 'text-gray-800'"
+          >
+            Get In Touch
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500"
+              >with Me</span
+            >
+          </h2>
+          <p :class="darkMode ? 'text-gray-400' : 'text-gray-700'">
+            Siap berdiskusi tentang peluang kolaborasi dan proyek baru.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-10">
+          <!-- Phone -->
+          <div
+            class="contact-card p-6 rounded-2xl text-center"
+            :class="darkMode ? 'glass-dark' : 'glass'"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-900/30 mb-4"
+            >
+              <i
+                class="uil uil-phone text-3xl text-emerald-500"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <h5
+              class="font-bold mt-3"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              Telepon
+            </h5>
+            <p
+              class="text-sm mt-1"
+              :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+            >
+              +62 822-6462-8643
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div
+            class="contact-card p-6 rounded-2xl text-center"
+            :class="darkMode ? 'glass-dark' : 'glass'"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 dark:bg-rose-900/30 mb-4"
+            >
+              <i
+                class="uil uil-envelope text-3xl text-rose-500"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <h5
+              class="font-bold mt-3"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              Email
+            </h5>
+            <p
+              class="text-sm mt-1"
+              :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+            >
+              donny.23024@mhs.unesa.ac.id
+            </p>
+          </div>
+
+          <!-- Address -->
+          <div
+            class="contact-card p-6 rounded-2xl text-center"
+            :class="darkMode ? 'glass-dark' : 'glass'"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div
+              class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 dark:bg-amber-900/30 mb-4"
+            >
+              <i
+                class="uil uil-map-marker text-3xl text-amber-500"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <h5
+              class="font-bold mt-3"
+              :class="darkMode ? 'text-white' : 'text-gray-800'"
+            >
+              Alamat
+            </h5>
+            <p
+              class="text-sm mt-1"
+              :class="darkMode ? 'text-gray-300' : 'text-gray-600'"
+            >
+              Jl. Ke Ngluyu, Gondangkulon, Gondang, Nganjuk, Jawa Timur 64451
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact CTA -->
+        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+          <a
+            href="mailto:donny.23024@mhs.unesa.ac.id"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+          >
+            <i class="uil uil-message" aria-hidden="true"></i> Kirim Email
+          </a>
+          <a
+            href="https://wa.me/6282264628643"
+            target="_blank"
+            class="ml-3 inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+            :class="darkMode ? 'glass-dark text-white' : 'glass text-gray-800'"
+          >
+            <i class="uil uil-whatsapp" aria-hidden="true"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button
+      @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+      x-show="showScrollTop"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 transform scale-90"
+      x-transition:enter-end="opacity-100 transform scale-100"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="opacity-100 transform scale-100"
+      x-transition:leave-end="opacity-0 transform scale-90"
+      class="fixed bottom-5 left-5 z-40 inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-110"
+      aria-label="Scroll to top"
+    >
+      <i class="uil uil-arrow-up text-xl"></i>
+    </button>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/6282264628643"
+      target="_blank"
+      aria-label="Chat via WhatsApp"
+      class="fixed bottom-5 right-5 inline-flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 text-white shadow-lg hover:shadow-emerald-500/30 transition will-change-transform"
+      x-init="(() => { let last = 0; window.addEventListener('scroll', () => { const y = window.scrollY || document.documentElement.scrollTop; const dir = y > last ? 1 : -1; last = y; $el.style.transform = `translateY(${dir*3}px)`; clearTimeout(window.__wa); window.__wa = setTimeout(() => { $el.style.transform = 'translateY(0)' }, 160); }) })()"
+    >
+      <i class="uil uil-whatsapp text-2xl" aria-hidden="true"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 animate-fade-in-up">
+      <div class="container mx-auto text-center">
+        <ul
+          class="flex items-center justify-center gap-5 text-2xl mb-4"
+          data-aos="fade-up"
+        >
+          <li>
+            <a
+              href="#"
+              class="uil uil-dribbble transition-colors"
+              :class="darkMode ? 'text-white hover:text-purple-400' : 'text-gray-700 hover:text-purple-500'}"
+              aria-label="Dribbble"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/donny.a___"
+              class="uil uil-instagram transition-colors"
+              :class="darkMode ? 'text-white hover:text-purple-400' : 'text-gray-700 hover:text-purple-500'}"
+              aria-label="Instagram"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/@donny.a12"
+              class="uil uil-youtube transition-colors"
+              :class="darkMode ? 'text-white hover:text-purple-400' : 'text-gray-700 hover:text-purple-500'}"
+              aria-label="YouTube"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/donnya24"
+              class="uil uil-github transition-colors"
+              :class="darkMode ? 'text-white hover:text-purple-400' : 'text-gray-700 hover:text-purple-500'}"
+              aria-label="GitHub"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/donny-andika-kurniawan-15923131b"
+              class="uil uil-linkedin transition-colors"
+              :class="darkMode ? 'text-white hover:text-purple-400' : 'text-gray-700 hover:text-purple-500'}"
+              aria-label="LinkedIn"
+            ></a>
+          </li>
+        </ul>
+        <p
+          class="text-sm"
+          :class="darkMode ? 'text-gray-300' : 'text-gray-700'"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          &copy; 2025 Donny Andika Kurniawan
+        </p>
+      </div>
+    </footer>
+
+    <!-- Inline Alert (Alpine) -->
+    <div
+      x-show="showAlert"
+      x-transition.opacity
+      @click="showAlert=false"
+      class="fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-4 bg-black/30"
+    >
+      <div
+        @click.stop
+        class="w-full max-w-sm p-4 rounded-2xl text-center animate-scale-in"
+        :class="darkMode ? 'glass-dark text-white' : 'glass text-gray-800'"
+      >
+        <p x-text="alertMessage"></p>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/alpine.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
