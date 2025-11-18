@@ -174,6 +174,63 @@ html {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
+/* ========== FIX GRADASI PADA MOBILE ========== */
+/* Pastikan section about tidak memotong elemen */
+#about {
+  overflow: visible !important;
+  max-width: 100vw !important;
+}
+
+/* Container khusus untuk about section */
+#about .container {
+  overflow: visible !important;
+}
+
+/* Grid di about section */
+#about .grid {
+  overflow: visible !important;
+}
+
+/* Fix untuk gambar profil dan background gradasi */
+.animate-float {
+  overflow: visible !important;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.animate-float .relative {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible !important;
+  width: 100%;
+}
+
+/* Background gradasi yang responsive - FIXED */
+.animate-float .absolute {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 280px !important;
+  height: 280px !important;
+  z-index: 1;
+  margin: 0 !important;
+}
+
+/* Gambar profil */
+.animate-float img {
+  width: 240px !important;
+  height: 240px !important;
+  position: relative;
+  z-index: 2;
+  max-width: none !important;
+}
+
 /* Mobile responsiveness tweaks */
 @media (max-width: 768px) {
   .animated-text {
@@ -194,12 +251,91 @@ html {
     max-width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
+    overflow: visible !important;
   }
 
   /* Pastikan gambar tidak melebihi lebar container */
-  img {
+  img:not(.animate-float img) {
     max-width: 100%;
     height: auto;
+  }
+
+  /* Adjust ukuran untuk mobile - GRADASI TIDAK TERPOTONG */
+  .animate-float {
+    min-height: 250px;
+    padding: 1.5rem 0;
+    margin: 0 auto;
+  }
+  
+  .animate-float .relative {
+    width: 260px;
+    height: 260px;
+  }
+  
+  .animate-float .absolute {
+    width: 260px !important;
+    height: 260px !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  
+  .animate-float img {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  /* Pastikan section about memiliki cukup ruang */
+  #about {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    min-height: auto !important;
+  }
+
+  /* Pastikan grid tidak memotong */
+  #about .grid {
+    gap: 2rem !important;
+  }
+}
+
+/* Untuk mobile sangat kecil */
+@media (max-width: 480px) {
+  .animate-float {
+    min-height: 220px;
+    padding: 1rem 0;
+  }
+  
+  .animate-float .relative {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .animate-float .absolute {
+    width: 240px !important;
+    height: 240px !important;
+  }
+  
+  .animate-float img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  #about {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+}
+
+/* Untuk tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .animate-float .absolute {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  
+  .animate-float img {
+    width: 260px !important;
+    height: 260px !important;
   }
 }
 
@@ -275,8 +411,8 @@ img {
   background-attachment: fixed;
 }
 
-/* Pastikan semua elemen tidak melebihi viewport */
-section {
+/* Pastikan semua elemen tidak melebihi viewport - KECUALI about section */
+section:not(#about) {
   max-width: 100vw;
   overflow: hidden;
 }

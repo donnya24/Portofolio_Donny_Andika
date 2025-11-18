@@ -53,13 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(section);
   });
 
-  // Parallax effect for hero image container using .animate-float
-  window.addEventListener("scroll", () => {
-    const scrolled = window.pageYOffset;
-    const parallax = document.querySelector(".animate-float");
-    if (parallax) parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
-  });
-
   // Smooth scrolling for nav links (offset header)
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
